@@ -112,6 +112,12 @@
             settings:keywords="@string/keywords_ambient_display_screen" />
 
         <SwitchPreference
+            android:key="pocket_judge"
+            android:title="@string/pocket_judge_title"
+            android:summary="@string/pocket_judge_summary"
+            android:icon="@drawable/ic_settings_pocket" />
+
+        <SwitchPreference
             android:key="camera_gesture"
             android:summary="@string/camera_gesture_desc"
             android:title="@string/camera_gesture_title" />
