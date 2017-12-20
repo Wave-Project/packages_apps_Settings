@@ -93,6 +93,10 @@
     <string name="theme_main">Theming</string>
     <string name="theming">System Theming</string>
     <string name="accent_color">Accent picker</string>
+    <string name="system_theme_style_title">Select Tone</string>
+    <string name="system_theme_style_auto">Wallpaper based</string>
+    <string name="system_theme_style_light">Light</string>
+    <string name="system_theme_style_dark">Dark</string>
 
     <!-- CAF version -->
     <string name="caf_version">CAF version</string>

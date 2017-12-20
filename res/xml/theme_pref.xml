@@ -15,10 +15,11 @@
     android:title="@string/theme_main">
 
     <ListPreference
-        android:key="systemui_theme"
-        android:title="@string/device_theme"
-        android:entries="@array/systemui_theme_entries"
-        android:entryValues="@array/systemui_theme_values" />
+        android:key="system_theme_style"
+        android:title="@string/system_theme_style_title"
+        android:persistent="false"
+        android:entries="@array/system_theme_style_entries"
+        android:entryValues="@array/system_theme_style_values" />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="accent_color"

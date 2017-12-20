@@ -45,7 +45,7 @@ public class ThemeFragment extends SettingsPreferenceFragment
 
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
-    private static final String KEY_SYSUI_THEME = "systemui_theme";
+    private static final String SYSTEM_THEME_STYLE = "system_theme_style";
 
     private OverlayManagerWrapper mOverlayService;
     private ColorPickerPreference mThemeColor;
@@ -72,7 +72,7 @@ public class ThemeFragment extends SettingsPreferenceFragment
             mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
         } else if (preference == mSystemUiThemePref) {
             int value = Integer.parseInt((String) newValue);
-            Settings.Secure.putInt(getContext().getContentResolver(), Settings.Secure.THEME_MODE, value);
+            Settings.System.putInt(getContext().getContentResolver(), Settings.System.SYSTEM_THEME_STYLE, value);
             mSystemUiThemePref.setSummary(mSystemUiThemePref.getEntries()[value]);
         }
         return true;
@@ -89,8 +89,8 @@ public class ThemeFragment extends SettingsPreferenceFragment
     }
 
     private void setupStylePref() {
-        mSystemUiThemePref = (ListPreference) findPreference(KEY_SYSUI_THEME);
-        int value = Settings.Secure.getInt(getContext().getContentResolver(), Settings.Secure.THEME_MODE, 0);
+        mSystemUiThemePref = (ListPreference) findPreference(SYSTEM_THEME_STYLE);
+        int value = Settings.System.getInt(getContext().getContentResolver(), Settings.System.SYSTEM_THEME_STYLE, 0);
         int index = mSystemUiThemePref.findIndexOfValue(Integer.toString(value));
         mSystemUiThemePref.setValue(Integer.toString(value));
         mSystemUiThemePref.setSummary(mSystemUiThemePref.getEntries()[index]);
