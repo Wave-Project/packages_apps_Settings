@@ -97,6 +97,7 @@
     <string name="system_theme_style_auto">Wallpaper based</string>
     <string name="system_theme_style_light">Light</string>
     <string name="system_theme_style_dark">Dark</string>
+    <string name="system_theme_style_black">Black</string>
 
     <!-- CAF version -->
     <string name="caf_version">CAF version</string>
