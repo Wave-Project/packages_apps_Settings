@@ -158,4 +158,6 @@
     <string name="battery_style_circle">Circle</string>
     <string name="battery_style_hidden">Hidden</string>
 
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
 </resources>
