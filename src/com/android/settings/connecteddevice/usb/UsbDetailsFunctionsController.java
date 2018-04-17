@@ -21,9 +21,9 @@ import static android.net.ConnectivityManager.TETHERING_USB;
 import android.content.Context;
 import android.hardware.usb.UsbManager;
 import android.hardware.usb.UsbPort;
-import android.support.annotation.VisibleForTesting;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceScreen;
+import androidx.annotation.VisibleForTesting;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
 import android.net.ConnectivityManager;
 
 import com.android.settings.R;

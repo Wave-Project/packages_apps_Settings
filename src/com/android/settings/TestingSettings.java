@@ -19,9 +19,8 @@ package com.android.settings;
 import com.android.internal.telephony.PhoneConstants;
 import android.os.Bundle;
 import android.os.UserManager;
-import android.support.v7.preference.PreferenceScreen;
+import androidx.preference.PreferenceScreen;
 import android.telephony.TelephonyManager;
-
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 

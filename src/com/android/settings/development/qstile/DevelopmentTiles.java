@@ -27,7 +27,7 @@ import android.os.SystemProperties;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 import android.util.EventLog;
 import android.util.Log;
 import android.view.IWindowManager;

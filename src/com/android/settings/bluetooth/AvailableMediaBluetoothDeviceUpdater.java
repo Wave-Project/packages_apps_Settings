@@ -18,7 +18,7 @@ package com.android.settings.bluetooth;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.media.AudioManager;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 import android.util.Log;
 
 import com.android.settings.connecteddevice.DevicePreferenceCallback;
@@ -26,7 +26,7 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
 import com.android.settingslib.bluetooth.LocalBluetoothProfile;
-import android.support.v7.preference.Preference;
+import androidx.preference.Preference;
 
 import java.util.List;
 import java.util.ArrayList;

@@ -40,7 +40,7 @@ import android.os.UserManager;
 import android.provider.Settings;
 import android.security.Credentials;
 import android.security.KeyStore;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.InputType;
