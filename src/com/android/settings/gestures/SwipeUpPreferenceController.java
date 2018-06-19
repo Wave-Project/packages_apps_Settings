@@ -23,8 +23,9 @@ import android.content.pm.PackageManager;
 import android.os.UserManager;
 import android.provider.Settings;
 import android.support.annotation.VisibleForTesting;
+import android.text.TextUtils;
 
-import com.android.settings.R;
+import com.android.internal.R;
 
 public class SwipeUpPreferenceController extends GesturePreferenceController {
 
@@ -46,7 +47,7 @@ public class SwipeUpPreferenceController extends GesturePreferenceController {
         }
 
         final ComponentName recentsComponentName = ComponentName.unflattenFromString(
-                context.getString(com.android.internal.R.string.config_recentsComponentName));
+                context.getString(R.string.config_recentsComponentName));
         final Intent quickStepIntent = new Intent(ACTION_QUICKSTEP)
                 .setPackage(recentsComponentName.getPackageName());
         if (context.getPackageManager().resolveService(quickStepIntent,
@@ -59,6 +60,11 @@ public class SwipeUpPreferenceController extends GesturePreferenceController {
     @Override
     public int getAvailabilityStatus() {
         return isGestureAvailable(mContext) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
+    }
+
+    @Override
+    public boolean isSliceable() {
+        return TextUtils.equals(getPreferenceKey(), "gesture_swipe_up");
     }
 
     @Override
@@ -81,7 +87,7 @@ public class SwipeUpPreferenceController extends GesturePreferenceController {
     @Override
     public boolean isChecked() {
         final int defaultValue = mContext.getResources()
-                .getBoolean(com.android.internal.R.bool.config_swipe_up_gesture_default) ? ON : OFF;
+                .getBoolean(R.bool.config_swipe_up_gesture_default) ? ON : OFF;
         final int swipeUpEnabled = Settings.Secure.getInt(mContext.getContentResolver(),
                 Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, defaultValue);
         return swipeUpEnabled != OFF;

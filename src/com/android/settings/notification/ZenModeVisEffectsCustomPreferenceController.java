@@ -19,6 +19,7 @@ package com.android.settings.notification;
 import android.app.NotificationManager.Policy;
 import android.content.Context;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -28,7 +29,9 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 public class ZenModeVisEffectsCustomPreferenceController
         extends AbstractZenModePreferenceController {
 
-    protected boolean mShowMenuSelected;
+    private final String KEY;
+    private ZenCustomRadioButtonPreference mPreference;
+
     protected static final int INTERRUPTIVE_EFFECTS = Policy.SUPPRESSED_EFFECT_AMBIENT
             | Policy.SUPPRESSED_EFFECT_PEEK
             | Policy.SUPPRESSED_EFFECT_LIGHTS
@@ -37,35 +40,33 @@ public class ZenModeVisEffectsCustomPreferenceController
     public ZenModeVisEffectsCustomPreferenceController(Context context, Lifecycle lifecycle,
             String key) {
         super(context, key, lifecycle);
+        KEY = key;
     }
 
     @Override
     public boolean isAvailable() {
-        if (mShowMenuSelected) {
-            return true;
-        }
+        return true;
+    }
 
-        return areCustomOptionsSelected();
+    @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+        mPreference = (ZenCustomRadioButtonPreference) screen.findPreference(KEY);
+
+        mPreference.setOnGearClickListener(p -> {
+            launchCustomSettings();
+        });
+
+        mPreference.setOnRadioButtonClickListener(p -> {
+            launchCustomSettings();
+        });
     }
 
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
 
-        ZenCustomRadioButtonPreference pref = (ZenCustomRadioButtonPreference) preference;
-        pref.setChecked(areCustomOptionsSelected());
-
-        pref.setOnGearClickListener(p -> {
-            launchCustomSettings();
-        });
-
-        pref.setOnRadioButtonClickListener(p -> {
-            launchCustomSettings();
-        });
-    }
-
-    protected void setShownByMenu(boolean shown) {
-        mShowMenuSelected = shown;
+        mPreference.setChecked(areCustomOptionsSelected());
     }
 
     protected boolean areCustomOptionsSelected() {
