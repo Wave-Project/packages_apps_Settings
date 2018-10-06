@@ -57,7 +57,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
         implements DeviceNamePreferenceController.DeviceNamePreferenceHost {
 
     private static final String LOG_TAG = "MyDeviceInfoFragment";
-    private static final String KEY_MY_DEVICE_INFO_HEADER = "my_device_info_header";
 
     private BuildNumberPreferenceController mBuildNumberPreferenceController;
 
@@ -78,12 +77,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
         use(DeviceNamePreferenceController.class).setHost(this /* parent */);
         mBuildNumberPreferenceController = use(BuildNumberPreferenceController.class);
         mBuildNumberPreferenceController.setHost(this /* parent */);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        initHeader();
     }
 
     @Override
@@ -124,40 +117,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void initHeader() {
-        // TODO: Migrate into its own controller.
-        final LayoutPreference headerPreference =
-                getPreferenceScreen().findPreference(KEY_MY_DEVICE_INFO_HEADER);
-        final boolean shouldDisplayHeader = getContext().getResources().getBoolean(
-                R.bool.config_show_device_header_in_device_info);
-        headerPreference.setVisible(shouldDisplayHeader);
-        if (!shouldDisplayHeader) {
-            return;
-        }
-        final View headerView = headerPreference.findViewById(R.id.entity_header);
-        final Activity context = getActivity();
-        final Bundle bundle = getArguments();
-        final EntityHeaderController controller = EntityHeaderController
-                .newInstance(context, this, headerView)
-                .setRecyclerView(getListView(), getSettingsLifecycle())
-                .setButtonActions(EntityHeaderController.ActionType.ACTION_NONE,
-                        EntityHeaderController.ActionType.ACTION_NONE);
-
-        // TODO: There may be an avatar setting action we can use here.
-        final int iconId = bundle.getInt("icon_id", 0);
-        if (iconId == 0) {
-            final UserManager userManager = (UserManager) getActivity().getSystemService(
-                    Context.USER_SERVICE);
-            final UserInfo info = Utils.getExistingUser(userManager,
-                    android.os.Process.myUserHandle());
-            controller.setLabel(info.name);
-            controller.setIcon(
-                    com.android.settingslib.Utils.getUserIcon(getActivity(), userManager, info));
-        }
-
-        controller.done(context, true /* rebindActions */);
     }
 
     @Override
