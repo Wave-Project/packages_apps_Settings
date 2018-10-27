@@ -65,4 +65,10 @@
     <string name="sub_activate_failed">Activation failed.</string>
     <string name="sub_deactivate_success">SIM deactivated.</string>
     <string name="sub_deactivate_failed">Deactivation failed.</string>
+
+    <!-- Selinux Status -->
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
 </resources>
