@@ -164,6 +164,12 @@
     <PreferenceCategory
         android:title="@string/header_category_system"
         android:key="display_system">
+
+        <!-- Statusbar Settings -->
+        <Preference
+            android:key="statusbar_settings"
+            android:title="@string/status_bar_title"
+            android:fragment="com.android.settings.wave.fragments.Statusbar" />
 		
 	<SwitchPreference
 	    android:key="auto_rotate"
