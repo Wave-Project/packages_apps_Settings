@@ -174,4 +174,10 @@
         android:title="@string/display_vr_pref_title"
         android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
 
+    <!-- Statusbar Settings -->
+    <Preference
+        android:key="statusbar_settings"
+        android:title="@string/status_bar_title"
+        android:fragment="com.android.settings.wave.fragments.Statusbar" />
+
 </PreferenceScreen>
