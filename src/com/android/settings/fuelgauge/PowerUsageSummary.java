@@ -35,7 +35,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnLongClickListener;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -209,18 +208,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
         initFeatureProvider();
         mBatteryLayoutPref = (LayoutPreference) findPreference(KEY_BATTERY_HEADER);
-        final Button AdvancedUsage =
-            mBatteryLayoutPref.findViewById(R.id.btn_show_stats);
-        AdvancedUsage.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                new SubSettingLauncher(getContext())
-                        .setDestination(PowerUsageAdvanced.class.getName())
-                        .setSourceMetricsCategory(getMetricsCategory())
-                        .setTitle(R.string.advanced_battery_title)
-                        .launch();
-            }
-        });
+
         mScreenUsagePref = (PowerGaugePreference) findPreference(KEY_SCREEN_USAGE);
         mLastFullChargePref = (PowerGaugePreference) findPreference(
                 KEY_TIME_SINCE_LAST_FULL_CHARGE);
@@ -271,6 +259,9 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                     .setIcon(com.android.internal.R.drawable.ic_menu_info_details)
                     .setAlphabeticShortcut('t');
         }
+
+        menu.add(Menu.NONE, MENU_ADVANCED_BATTERY, Menu.NONE, R.string.advanced_battery_title);
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 

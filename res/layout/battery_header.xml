@@ -30,15 +30,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="56dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/battery_percent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@*android:string/config_headlineFontFamily"
             android:textAppearance="@android:style/TextAppearance.Material.Display1"/>
 
@@ -46,19 +45,9 @@
             android:id="@+id/summary1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="2dp"
-            android:minLines="1"
+            android:layout_marginTop="8dp"
+            android:minLines="2"
             android:textAppearance="@android:style/TextAppearance.Material.Small"/>
-
-        <Button
-            android:id="@+id/btn_show_stats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="9dp"
-            android:text="@string/menu_stats_total"
-            style="@style/ActionPrimaryButton"/>
 
         <TextView
             android:id="@+id/summary2"
@@ -70,10 +59,8 @@
 
     <com.android.settings.fuelgauge.BatteryMeterView
         android:id="@+id/battery_header_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="64dp"/>
+        android:layout_width="@dimen/battery_meter_width"
+        android:layout_height="@dimen/battery_meter_height"
+        android:layout_marginEnd="16dp"/>
 
 </LinearLayout>
