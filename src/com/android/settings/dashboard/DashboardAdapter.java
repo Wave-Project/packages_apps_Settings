@@ -172,6 +172,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     @Override
     public DashboardItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
+        if (viewType == R.layout.wave_search_layout) {
+            return new SearchLayoutHolder(view);
+        }
         if (viewType == R.layout.condition_header) {
             return new ConditionHeaderHolder(view);
         }
@@ -193,6 +196,11 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
                 onBindTile(holder, tile);
                 holder.itemView.setTag(tile);
                 holder.itemView.setOnClickListener(mTileClickListener);
+                break;
+            case R.layout.wave_search_layout:
+                holder.itemView.setTag(Integer.valueOf(R.layout.wave_search_layout));
+                FeatureFactory.getFactory(mContext).getSearchFeatureProvider()
+                        .initSearchLayout((Activity) mContext, holder.itemView);
                 break;
             case R.layout.suggestion_container:
                 onBindSuggestion((SuggestionContainerHolder) holder, position);
@@ -415,4 +423,10 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
         }
     }
 
+    public static class SearchLayoutHolder extends DashboardItemHolder {
+
+        public SearchLayoutHolder(View itemView) {
+            super(itemView);
+        }
+    }
 }

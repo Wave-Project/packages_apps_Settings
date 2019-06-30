@@ -53,6 +53,7 @@ public class DashboardData {
     static final int STABLE_ID_CONDITION_FOOTER = 3;
     @VisibleForTesting
     static final int STABLE_ID_CONDITION_CONTAINER = 4;
+    static final int STABLE_ID_SERCH_LAYOUT = 5;
 
     private final List<Item> mItems;
     private final DashboardCategory mCategory;
@@ -186,6 +187,10 @@ public class DashboardData {
 
         final List<Suggestion> suggestions = getSuggestionsToShow(mSuggestions);
         final boolean hasSuggestions = sizeOf(suggestions) > 0;
+
+        /* Custom Searchbar container */
+        addToItemList(null, R.layout.wave_search_layout,
+            STABLE_ID_SERCH_LAYOUT, true);
 
         /* Suggestion container. This is the card view that contains the list of suggestions.
          * This will be added whenever the suggestion list is not empty */

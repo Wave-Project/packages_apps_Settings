@@ -23,4 +23,6 @@
     <string name="display_label">Screen</string>
     <string name="header_category_custom">Customization</string>
     <string name="header_category_system">System</string>
+
+    <string name="dashboard_title">Settings</string>
 </resources>

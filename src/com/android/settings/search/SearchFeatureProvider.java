@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.view.View;
 import android.widget.Toolbar;
 
 import com.android.settings.overlay.FeatureFactory;
@@ -58,13 +59,13 @@ public interface SearchFeatureProvider {
     }
 
     /**
-     * Initializes the search toolbar.
+     * Initializes the search layout.
      */
-    default void initSearchToolbar(Activity activity, Toolbar toolbar) {
-        if (activity == null || toolbar == null) {
+    default void initSearchLayout(Activity activity, View view) {
+        if (activity == null || view == null) {
             return;
         }
-        toolbar.setOnClickListener(tb -> {
+        view.setOnClickListener(tb -> {
             final Intent intent = SEARCH_UI_INTENT;
             intent.setPackage(getSettingsIntelligencePkgName());
 

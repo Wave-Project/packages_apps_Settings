@@ -299,31 +299,17 @@ public class SettingsActivity extends SettingsDrawerActivity
             launchSettingFragment(initialFragmentName, isSubSettings, intent);
         }
 
-        final boolean deviceProvisioned = Utils.isDeviceProvisioned(this);
-        if (mIsShowingDashboard) {
-            findViewById(R.id.search_bar).setVisibility(
-                    deviceProvisioned ? View.VISIBLE : View.INVISIBLE);
-            findViewById(R.id.action_bar).setVisibility(View.GONE);
-            final Toolbar toolbar = findViewById(R.id.search_action_bar);
-            FeatureFactory.getFactory(this).getSearchFeatureProvider()
-                    .initSearchToolbar(this, toolbar);
-            setActionBar(toolbar);
-
-            // Please forgive me for what I am about to do.
-            //
-            // Need to make the navigation icon non-clickable so that the entire card is clickable
-            // and goes to the search UI. Also set the background to null so there's no ripple.
-            View navView = toolbar.getNavigationView();
-            navView.setClickable(false);
-            navView.setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);
-            navView.setBackground(null);
+        View search_bar = findViewById(R.id.search_bar);
+        if (search_bar != null) {
+            search_bar.setVisibility(View.GONE);
         }
 
         ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
+        if (!(actionBar == null || mIsShowingDashboard)) {
+            boolean deviceProvisioned = Utils.isDeviceProvisioned(this);
             actionBar.setDisplayHomeAsUpEnabled(deviceProvisioned);
             actionBar.setHomeButtonEnabled(deviceProvisioned);
-            actionBar.setDisplayShowTitleEnabled(!mIsShowingDashboard);
+            actionBar.setDisplayShowTitleEnabled(mIsShowingDashboard);
         }
         mSwitchBar = findViewById(R.id.switch_bar);
         if (mSwitchBar != null) {
@@ -389,19 +375,19 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     @VisibleForTesting
     void launchSettingFragment(String initialFragmentName, boolean isSubSettings, Intent intent) {
-        if (!mIsShowingDashboard && initialFragmentName != null) {
-            setTitleFromIntent(intent);
-
-            Bundle initialArguments = intent.getBundleExtra(EXTRA_SHOW_FRAGMENT_ARGUMENTS);
-            switchToFragment(initialFragmentName, initialArguments, true, false,
-                    mInitialTitleResId, mInitialTitle, false);
-        } else {
+        if (mIsShowingDashboard && initialFragmentName == null) {
             // Show search icon as up affordance if we are displaying the main Dashboard
             mInitialTitleResId = R.string.dashboard_title;
 
             switchToFragment(DashboardSummary.class.getName(), null /* args */, false, false,
                     mInitialTitleResId, mInitialTitle, false);
+            return;
         }
+        setTitleFromIntent(intent);
+
+        Bundle initialArguments = intent.getBundleExtra(EXTRA_SHOW_FRAGMENT_ARGUMENTS);
+        switchToFragment(initialFragmentName, initialArguments, true, false,
+                mInitialTitleResId, mInitialTitle, false);
     }
 
     private void setTitleFromIntent(Intent intent) {
