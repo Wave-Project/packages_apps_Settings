@@ -18,8 +18,10 @@ package com.android.settings.dashboard;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.service.settings.suggestions.Suggestion;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.util.DiffUtil;
@@ -42,6 +44,7 @@ import com.android.settings.dashboard.conditional.Condition;
 import com.android.settings.dashboard.conditional.ConditionAdapter;
 import com.android.settings.dashboard.suggestions.SuggestionAdapter;
 import com.android.settings.overlay.FeatureFactory;
+import com.android.settings.wave.utils.WaveUtils;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
@@ -70,6 +73,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     private boolean mFirstFrameDrawn;
     private RecyclerView mRecyclerView;
     private SuggestionAdapter mSuggestionAdapter;
+
+    private int mNormalColor;
+    private int mAccentColor;
 
     @VisibleForTesting
     DashboardData mDashboardData;
@@ -115,6 +121,15 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
                 .setCategory(category)
                 .setConditionExpanded(conditionExpanded)
                 .build();
+
+        int[] attrs = new int[] {
+            android.R.attr.colorControlNormal,
+            android.R.attr.colorAccent,
+        };
+        TypedArray ta = mContext.getTheme().obtainStyledAttributes(attrs);
+        mNormalColor = ta.getColor(0, 0xff808080);
+        mAccentColor = ta.getColor(1, 0xff808080);
+        ta.recycle();
     }
 
     public void setSuggestions(List<Suggestion> data) {
@@ -340,6 +355,18 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
             } catch (PackageManager.NameNotFoundException e) {
                 Log.e(TAG, "Failed to set background color for " + tile.intent.getPackage());
             }
+            mCache.updateIcon(tile.icon, icon);
+        }
+        if (WaveUtils.isLightModeOn(mContext.getContentResolver())) {
+            icon = new RoundedHomepageIcon(mContext, icon);
+            ((RoundedHomepageIcon) icon).setBackgroundColor(mContext.getColor(R.color.settings_icon_color_light));
+            icon.setTint(mAccentColor);
+            mCache.updateIcon(tile.icon, icon);
+        }
+        if (WaveUtils.isDarkModeOn(mContext.getContentResolver())) {
+            icon = new RoundedHomepageIcon(mContext, icon);
+            ((RoundedHomepageIcon) icon).setBackgroundColor(mContext.getColor(R.color.settings_icon_color_dark));
+            icon.setTint(mAccentColor);
             mCache.updateIcon(tile.icon, icon);
         }
         holder.icon.setImageDrawable(icon);
