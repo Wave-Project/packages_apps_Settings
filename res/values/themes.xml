@@ -227,6 +227,8 @@
         <!-- Redefine the ActionBar style for contentInsetStart -->
         <item name="android:actionBarStyle">@style/Theme.ActionBar</item>
 
+        <item name="android:actionBarSize">82dip</item>
+
         <item name="switchBarTheme">@style/ThemeOverlay.SwitchBar.Settings</item>
 
         <item name="preferenceBackgroundColor">@drawable/preference_background</item>
