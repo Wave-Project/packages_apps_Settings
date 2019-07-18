@@ -309,7 +309,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             boolean deviceProvisioned = Utils.isDeviceProvisioned(this);
             actionBar.setDisplayHomeAsUpEnabled(deviceProvisioned);
             actionBar.setHomeButtonEnabled(deviceProvisioned);
-            actionBar.setDisplayShowTitleEnabled(mIsShowingDashboard);
+            actionBar.setDisplayShowTitleEnabled(!mIsShowingDashboard);
         }
         mSwitchBar = findViewById(R.id.switch_bar);
         if (mSwitchBar != null) {
