@@ -78,4 +78,9 @@
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon instead of LTE icon</string>
+
+    <!-- Theme -->
+    <string name="theme_main">Theming</string>
+    <string name="theming">System Theming</string>
+    <string name="accent_color">Accent picker</string>
 </resources>
