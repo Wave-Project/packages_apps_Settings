@@ -88,4 +88,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+
+    <!-- Theme -->
+    <string name="theme_main">Theming</string>
+    <string name="theming">System Theming</string>
+    <string name="accent_color">Accent picker</string>
 </resources>
