@@ -17,7 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Whether we should show the security patch level in
          "About Phone" -->
-    <bool name="config_show_security_patch_level">true</bool>
+    <bool name="config_show_security_patch_level">false</bool>
 
     <!-- Does the device allow for manual subscription provisioning? Only works for multi-sim devices,
          and currently depends on QC's proprietary telephony stack -->
