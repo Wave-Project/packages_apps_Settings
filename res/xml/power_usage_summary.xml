@@ -65,6 +65,12 @@
         android:title="@string/device_screen_usage"
         android:icon="@drawable/ic_screen_usage"
         android:selectable="false" />
+		
+    <Preference
+        android:key="battery_temp"
+        android:title="@string/battery_temp"
+        android:icon="@drawable/ic_battery_temp"
+        android:selectable="false" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="power_usage_footer"
