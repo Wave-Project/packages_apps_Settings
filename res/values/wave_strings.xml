@@ -76,4 +76,8 @@
     <string name="ambient_notification_light_color_automatic_title">Notification color</string>
     <string name="pulse_ambient_light_color">When pulsing, use</string>
 
+    <!-- Battery light -->
+    <string name="battery_light_title">Battery light</string>
+    <string name="battery_light_summary">Turn on the light while charging and blink when battery is low</string>
+
 </resources>
