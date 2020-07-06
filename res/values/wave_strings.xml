@@ -246,4 +246,9 @@
     <!-- Battery Temperature -->
     <string name="battery_temp">Battery temperature</string>
 
+    <!-- Data usage -->
+    <string name="data_usage_period">Data usage period</string>
+    <string name="data_usage_daily">Daily</string>
+    <string name="data_usage_monthly">Monthly</string>
+
 </resources>
