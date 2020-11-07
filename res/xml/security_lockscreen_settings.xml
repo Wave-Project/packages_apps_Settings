@@ -57,12 +57,6 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
-        <me.waveproject.framework.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_media_metadata"
-            android:title="@string/lockscreen_media_art_title"
-            android:summary="@string/lockscreen_media_art_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -131,6 +125,28 @@
             android:summary="@string/summary_placeholder"
             settings:searchable="false"/>
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_media_art_options"
+        android:title="@string/lockscreen_media_art_category_title"
+        android:order="1002">
+
+        <me.waveproject.framework.preference.SystemSettingSwitchPreference
+           android:key="lockscreen_media_metadata"
+            android:title="@string/lockscreen_media_art_title"
+            android:summary="@string/lockscreen_media_art_summary"
+            android:defaultValue="false" />
+
+        <me.waveproject.framework.preference.CustomSystemSeekBarPreference
+            android:key="lockscreen_media_blur"
+            android:title="@string/lockscreen_media_blur_title"
+            android:dependency="lockscreen_media_metadata"
+            settings:allowEditText="true"
+            android:max="25"
+            android:min="0"
+            android:defaultValue="25"
+            settings:units="dp"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
