@@ -240,8 +240,9 @@
     <string name="fingerprint_power_button_press_on_summary">Press power button firmly to unlock with fingerprint when screen is off</string>
 
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats</string>
-    <string name="battery_stats_message">Battery history stats are going to be reset</string>
+    <string name="battery_stats_reset">Clear usage data?</string>
+    <string name="battery_stats_message">Battery usage data will be lost</string> 
+    <string name="battery_stats_clear">@string/proxy_clear_text</string>
 
     <!-- Battery Temperature -->
     <string name="battery_temp">Battery temperature</string>

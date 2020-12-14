@@ -286,7 +286,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.battery_stats_reset)
                 .setMessage(R.string.battery_stats_message)
-                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                .setPositiveButton(R.string.battery_stats_clear, (dialog, which) -> {
                     mStatsHelper.resetStatistics();
                     refreshUi(BatteryUpdateType.MANUAL);
                 })
