@@ -29,4 +29,7 @@
     <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
     <string name="connected_tws_device_saved_title">Saved Earbuds</string>
 
+    <!-- Battery Stats Menu -->
+    <string name="battery_menu_stats_total">View detailed usage</string>
+
 </resources>

@@ -321,7 +321,7 @@
 
     <!-- Battery meter view size -->
     <dimen name="battery_meter_width">66dp</dimen>
-    <dimen name="battery_meter_height">100dp</dimen>
+    <dimen name="battery_meter_height">114dp</dimen>
 
     <!-- Margin for the reset screens -->
     <dimen name="reset_network_margin_start">72dp</dimen>
