@@ -16,8 +16,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- WaveOS version -->
-    <string name="wave_version">WaveOS version</string>
+    <!-- WaveOS versioning -->
+    <string name="wave_version_title">Version</string>
+    <string name="wave_version_code_title">Codename</string>
+    <string name="wave_release_type_title">Release type</string>
+    <string name="wave_maintainer_title">Maintainer</string>
 
     <!-- Mobile network setting screen, summary of Mobile data switch preference when the network
          is unavailable, the preference selection will be disabled. [CHAR LIMIT=NONE] -->

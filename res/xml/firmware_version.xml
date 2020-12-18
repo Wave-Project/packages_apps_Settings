@@ -21,14 +21,11 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- WaveOS version -->
-    <Preference
-        android:key="wave_version"
-        android:title="@string/wave_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:searchable="false"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.WaveVersionDetailPreferenceController" />
+    <!-- WaveOS info -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="wave_info"
+        android:layout="@layout/wave_info"
+        android:selectable="false" />
 
     <!-- Android version -->
     <Preference
