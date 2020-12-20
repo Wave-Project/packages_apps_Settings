@@ -19,7 +19,15 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="system_dashboard_screen"
     android:title="@string/header_category_system"
-    settings:initialExpandedChildrenCount="4">
+    settings:initialExpandedChildrenCount="5">
+
+    <Preference
+        android:key="accessibility_settings"
+        android:title="@string/accessibility_settings"
+        android:icon="@drawable/ic_settings_accessibility"
+        android:order="-270"
+        android:fragment="com.android.settings.accessibility.AccessibilitySettings"
+        settings:controller="com.android.settings.accessibility.AccessibilityPreferenceController"/>
 
     <Preference
         android:key="language_input_settings"
