@@ -25,6 +25,13 @@
         android:summary="@string/quick_settings_quick_pull_down_summary"
         android:defaultValue="true" />
 
+    <!-- DT2S on statusbar -->
+    <me.waveproject.framework.preference.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_sleep_gesture_title"
+        android:summary="@string/double_tap_sleep_gesture_summary"
+        android:defaultValue="false" />
+
     <!-- Statusbar Icon Manager -->
     <PreferenceScreen
         android:key="icon_manager"
