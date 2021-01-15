@@ -62,15 +62,15 @@
             style="@style/TextAppearance.WaveInfoSummary" />
 
         <TextView
-            android:id="@+id/version_code_title"
+            android:id="@+id/device_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="@string/wave_version_code_title"
+            android:text="@string/wave_device_title"
             style="@style/TextAppearance.WaveInfoTitle" />
 
         <TextView
-            android:id="@+id/version_code_message"
+            android:id="@+id/device_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"

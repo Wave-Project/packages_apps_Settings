@@ -17,6 +17,7 @@
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.SystemProperties;
 import android.widget.TextView;
 
@@ -34,9 +35,35 @@ public class WaveInfoPreferenceController extends AbstractPreferenceController {
     private static final String PROP_WAVE_VERSION_CODE = "ro.wave.version_code";
     private static final String PROP_WAVE_RELEASETYPE = "ro.wave.releasetype";
     private static final String PROP_WAVE_MAINTAINER = "ro.wave.maintainer";
+    private static final String PROP_WAVE_DEVICE = "ro.wave.device_name";
 
     public WaveInfoPreferenceController(Context context) {
         super(context);
+    }
+
+    private String getDeviceName() {
+        String device = SystemProperties.get(PROP_WAVE_DEVICE, "");
+        if (device.equals("")) {
+            device = Build.MANUFACTURER + " " + Build.MODEL;
+        }
+        return device;
+    }
+
+    private String getWaveVersion() {
+        final String version = SystemProperties.get(PROP_WAVE_VERSION,
+                this.mContext.getString(R.string.device_info_default));
+        final String versionCode = SystemProperties.get(PROP_WAVE_VERSION_CODE,
+                this.mContext.getString(R.string.device_info_default));
+
+        return version + " | " + versionCode;
+    }
+
+    private String getWaveReleaseType() {
+        final String releaseType = SystemProperties.get(PROP_WAVE_RELEASETYPE,
+                this.mContext.getString(R.string.device_info_default));
+
+        return releaseType.substring(0, 1).toUpperCase() +
+                 releaseType.substring(1).toLowerCase();
     }
 
     @Override
@@ -44,19 +71,16 @@ public class WaveInfoPreferenceController extends AbstractPreferenceController {
         super.displayPreference(screen);
         final LayoutPreference waveInfoPreference = screen.findPreference(KEY_WAVE_INFO);
         final TextView version = (TextView) waveInfoPreference.findViewById(R.id.version_message);
-        final TextView versionCode = (TextView) waveInfoPreference.findViewById(R.id.version_code_message);
+        final TextView device = (TextView) waveInfoPreference.findViewById(R.id.device_message);
         final TextView releaseType = (TextView) waveInfoPreference.findViewById(R.id.release_type_message);
         final TextView maintainer = (TextView) waveInfoPreference.findViewById(R.id.maintainer_message);
-        final String waveVersion = SystemProperties.get(PROP_WAVE_VERSION,
-                this.mContext.getString(R.string.device_info_default));
-        final String waveVersionCode = SystemProperties.get(PROP_WAVE_VERSION_CODE,
-                this.mContext.getString(R.string.device_info_default));
-        final String waveReleaseType = SystemProperties.get(PROP_WAVE_RELEASETYPE,
-                this.mContext.getString(R.string.device_info_default));
+        final String waveVersion = getWaveVersion();
+        final String waveDevice = getDeviceName();
+        final String waveReleaseType = getWaveReleaseType();
         final String waveMaintainer = SystemProperties.get(PROP_WAVE_MAINTAINER,
                 this.mContext.getString(R.string.device_info_default));
         version.setText(waveVersion);
-        versionCode.setText(waveVersionCode);
+        device.setText(waveDevice);
         releaseType.setText(waveReleaseType);
         maintainer.setText(waveMaintainer);
     }
