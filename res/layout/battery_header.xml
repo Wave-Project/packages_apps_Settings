@@ -57,7 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="-2dp"
-            android:text="@string/battery_menu_stats_total" />
+            android:text="@string/battery_menu_stats_total"
+            style="@style/ActionPrimaryButton" />
 
     </LinearLayout>
 
