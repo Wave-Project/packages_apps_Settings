@@ -120,4 +120,9 @@
     <!-- Android debugging as root -->
     <string name="adb_enable_root">Rooted debugging</string>
     <string name="adb_enable_summary_root">Allow running Android debugging as root</string>
+
+    <!-- Theme Settings -->
+    <string name="theme_settings_title">Customization</string>
+    <string name="theme_settings_summary">Wallpapers, accent color, font, tone</string>
+
 </resources>
