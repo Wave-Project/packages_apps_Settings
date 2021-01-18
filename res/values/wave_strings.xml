@@ -139,4 +139,9 @@
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Screen refresh rate</string>
 
+    <!-- Theme Settings -->
+    <string name="theme_settings_title">Customization</string>
+    <string name="theme_settings_summary">Accent colors, icon shapes and more</string>
+    <string name="system_customization_category">SYSTEM CUSTOMIZATION</string>
+
 </resources>

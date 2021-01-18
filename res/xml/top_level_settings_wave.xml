@@ -26,7 +26,7 @@
         android:title="@string/network_dashboard_title"
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_homepage_network"
-        android:order="-160"
+        android:order="-170"
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
 
@@ -35,22 +35,31 @@
         android:title="@string/connected_devices_dashboard_title"
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_homepage_connected_device"
-        android:order="-150"
+        android:order="-160"
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
         settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>
 
     <com.android.settings.ui.TopLevelPreferenceDivider
         android:key="top_level_divider_one"
-        android:order="-145"/>
+        android:order="-155"/>
 
     <Preference
         android:key="top_level_display"
         android:title="@string/display_settings"
         android:summary="@string/summary_placeholder"
         android:icon="@drawable/ic_homepage_display"
-        android:order="-140"
+        android:order="-150"
         android:fragment="com.android.settings.DisplaySettings"
         settings:controller="com.android.settings.display.TopLevelDisplayPreferenceController"/>
+
+    <Preference
+        android:key="top_level_theme"
+        android:title="@string/theme_settings_title"
+        android:summary="@string/theme_settings_summary"
+        android:icon="@drawable/ic_homepage_theme_settings"
+        android:order="-140"
+        android:fragment="com.android.settings.wave.fragments.ThemeSettings"
+        settings:controller="com.android.settings.wave.controllers.TopLevelThemePreferenceController"/>
 
     <Preference
         android:key="top_level_sound"
