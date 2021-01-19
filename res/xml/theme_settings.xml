@@ -26,21 +26,25 @@
         <ListPreference
             android:key="android.theme.customization.accent_color"
             android:title="@string/theme_customization_accent_color_title"
+            android:icon="@drawable/ic_accent"
             android:order="10" />
 
         <ListPreference
             android:key="android.theme.customization.font"
             android:title="@string/theme_customization_font_title"
+            android:icon="@drawable/ic_font"
             android:order="20" />
 
         <ListPreference
             android:key="android.theme.customization.adaptive_icon_shape"
             android:title="@string/theme_customization_icon_shape_title"
+            android:icon="@drawable/ic_icon_shape"
             android:order="30" />
 
         <ListPreference
             android:key="android.theme.customization.icon_pack"
             android:title="@string/theme_customization_icon_pack_title"
+            android:icon="@drawable/ic_icon_pack"
             android:order="40" />
 
     </PreferenceCategory>
