@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2021 ShapeShiftOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.deviceinfo.aboutphone;
+package com.android.settings.deviceinfo;
 
 import android.app.Activity;
 import android.app.settings.SettingsEnums;
@@ -52,12 +52,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class MyDeviceInfoFragment extends DashboardFragment
-        implements DeviceNamePreferenceController.DeviceNamePreferenceHost {
+public class LegalCrapFragment extends DashboardFragment {
 
-    private static final String LOG_TAG = "MyDeviceInfoFragment";
+    private static final String LOG_TAG = "LegalCrapFragment";
 
-    private BuildNumberPreferenceController mBuildNumberPreferenceController;
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
 
     @Override
     public int getMetricsCategory() {
@@ -70,11 +72,8 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        use(DeviceNamePreferenceController.class).setHost(this /* parent */);
-        mBuildNumberPreferenceController = use(BuildNumberPreferenceController.class);
-        mBuildNumberPreferenceController.setHost(this /* parent */);
+    public void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -84,7 +83,7 @@ public class MyDeviceInfoFragment extends DashboardFragment
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.my_device_info;
+        return R.xml.legal_crap;
     }
 
     @Override
@@ -93,37 +92,24 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     private static List<AbstractPreferenceController> buildPreferenceControllers(
-            Context context, MyDeviceInfoFragment fragment, Lifecycle lifecycle) {
+            Context context, LegalCrapFragment fragment, Lifecycle lifecycle) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new RegulatoryInfoPreferenceController(context));
         controllers.add(new SafetyInfoPreferenceController(context));
-        controllers.add(new WaveInfoPreferenceController(context));
         return controllers;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (mBuildNumberPreferenceController.onActivityResult(requestCode, resultCode, data)) {
-            return;
-        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void showDeviceNameWarningDialog(String deviceName) {
-        DeviceNameWarningDialog.show(this);
-    }
-
-    public void onSetDeviceNameConfirm(boolean confirm) {
-        final DeviceNamePreferenceController controller = use(DeviceNamePreferenceController.class);
-        controller.updateDeviceName(confirm);
-    }
 
     /**
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.my_device_info) {
+            new BaseSearchIndexProvider(R.xml.legal_crap) {
 
                 @Override
                 public List<AbstractPreferenceController> createPreferenceControllers(

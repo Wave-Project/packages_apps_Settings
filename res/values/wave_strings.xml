@@ -252,4 +252,10 @@
     <string name="data_usage_daily">Daily</string>
     <string name="data_usage_monthly">Monthly</string>
 
+    <!-- About phone -->
+    <string name="status_about_phone_settings">Status</string>
+    <string name="status_about_phone_summary">Phone number, signal, etc</string>
+    <string name="legal_crap_settings">Legal information</string>
+    <string name="legal_crap_summary">Privacy policy, agreements, etc</string>
+
 </resources>

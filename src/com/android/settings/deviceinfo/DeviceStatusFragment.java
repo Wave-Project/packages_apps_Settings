@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2021 ShapeShiftOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.deviceinfo.aboutphone;
+package com.android.settings.deviceinfo;
 
 import android.app.Activity;
 import android.app.settings.SettingsEnums;
@@ -52,12 +52,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class MyDeviceInfoFragment extends DashboardFragment
-        implements DeviceNamePreferenceController.DeviceNamePreferenceHost {
+public class DeviceStatusFragment extends DashboardFragment {
 
-    private static final String LOG_TAG = "MyDeviceInfoFragment";
+    private static final String LOG_TAG = "DeviceStatusFragment";
 
-    private BuildNumberPreferenceController mBuildNumberPreferenceController;
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        use(ImeiInfoPreferenceController.class).setHost(this /* parent */);
+    }
 
     @Override
     public int getMetricsCategory() {
@@ -70,11 +73,8 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        use(DeviceNamePreferenceController.class).setHost(this /* parent */);
-        mBuildNumberPreferenceController = use(BuildNumberPreferenceController.class);
-        mBuildNumberPreferenceController.setHost(this /* parent */);
+    public void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -84,7 +84,7 @@ public class MyDeviceInfoFragment extends DashboardFragment
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.my_device_info;
+        return R.xml.device_status;
     }
 
     @Override
@@ -93,37 +93,29 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     private static List<AbstractPreferenceController> buildPreferenceControllers(
-            Context context, MyDeviceInfoFragment fragment, Lifecycle lifecycle) {
+            Context context, DeviceStatusFragment fragment, Lifecycle lifecycle) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
-        controllers.add(new RegulatoryInfoPreferenceController(context));
-        controllers.add(new SafetyInfoPreferenceController(context));
-        controllers.add(new WaveInfoPreferenceController(context));
+        controllers.add(new SimStatusPreferenceController(context, fragment));
+        controllers.add(new IpAddressPreferenceController(context, lifecycle));
+        controllers.add(new WifiMacAddressPreferenceController(context, lifecycle));
+        controllers.add(new BluetoothAddressPreferenceController(context, lifecycle));
+        controllers.add(new ManualPreferenceController(context));
+        controllers.add(new FeedbackPreferenceController(fragment, context));
+        controllers.add(new FccEquipmentIdPreferenceController(context));
+        controllers.add(new UptimePreferenceController(context, lifecycle));
         return controllers;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (mBuildNumberPreferenceController.onActivityResult(requestCode, resultCode, data)) {
-            return;
-        }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    public void showDeviceNameWarningDialog(String deviceName) {
-        DeviceNameWarningDialog.show(this);
-    }
-
-    public void onSetDeviceNameConfirm(boolean confirm) {
-        final DeviceNamePreferenceController controller = use(DeviceNamePreferenceController.class);
-        controller.updateDeviceName(confirm);
     }
 
     /**
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.my_device_info) {
+            new BaseSearchIndexProvider(R.xml.device_status) {
 
                 @Override
                 public List<AbstractPreferenceController> createPreferenceControllers(
