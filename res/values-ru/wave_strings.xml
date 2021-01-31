@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 Wave-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- WaveOS versioning -->
+    <string name="wave_version_title">Версия</string>
+    <string name="wave_device_title">Устройство</string>
+    <string name="wave_release_type_title">Тип выпуска</string>
+    <string name="wave_maintainer_title">Сопровождающий</string>
+
+    <!-- Mobile network setting screen, summary of Mobile data switch preference when the network
+         is unavailable, the preference selection will be disabled. [CHAR LIMIT=NONE] -->
+    <string name="mobile_data_settings_summary_unavailable">SIM-карта недоступна</string>
+
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">Сохраненные наушники</string>
+
+    <!-- Battery Stats Menu -->
+    <string name="battery_menu_stats_total">Посмотреть подробную статистику</string>
+
+    <!-- Swipe to screenshot -->
+    <string name="swipe_to_screenshot_title">Свайп для создания снимка экрана</string>
+    <string name="swipe_to_screenshot_summary">Проведите вниз тремя пальцами для создания снимка экрана</string>
+
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Циклический переход между режимами</string>
+    <string name="prevent_ringing_option_cycle_summary">Вкл (циклическое переключение режимов)</string>
+
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_screen_title">Адаптивное воспроизведение</string>
+    <string name="adaptive_playback_timeout_title">Использовать тайм-аут</string>
+    <string name="adaptive_playback_timeout_none_summary">Выкл</string>
+    <string name="adaptive_playback_timeout_30_secs">30 секунд</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Вкл (на 30 сек)</string>
+    <string name="adaptive_playback_timeout_1_min">1 минута</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Вкл (на 1 минуту)</string>
+    <string name="adaptive_playback_timeout_2_min">2 минуты</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Вкл (на 2 минуты)</string>
+    <string name="adaptive_playback_timeout_5_min">5 минут</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Вкл (на 5 минут)</string>
+    <string name="adaptive_playback_timeout_10_min">10 минут</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Вкл (на 10 минут)</string>
+	
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Включить фонарик</string>
+    <string name="power_button_torch_summary">Когда экран выключен, долгое нажатие на кнопку «Питание», включит фонарик</string>
+
+    <!-- Volume button music control -->
+    <string name="volume_button_music_control_title">Управление воспроизведением</string>
+    <string name="volume_button_music_control_summary">Когда экран выключен долгое нажатие на кнопки громкости переключает композиции</string>
+
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Включить меню расширенной перезагрузки</string>
+    <string name="global_actions_advanced_reboot_summary">При перезагрузке показывать опции для рекавери и загрузчика</string>
+
+    <!-- Horizon Light -->
+    <string name="pulse_ambient_light_title">Подсветка краёв экрана</string>
+    <string name="pulse_ambient_light_summary">Подсвечивать края экрана при получении уведомления в режиме Всегда включенного экрана</string>
+    <string name="ambient_notification_light_accent_title">Цвет системного акцента</string>
+    <string name="ambient_notification_light_color_automatic_title">Цвет уведомления</string>
+    <string name="pulse_ambient_light_color">Цвет подсветки</string>
+
+    <!-- Battery light -->
+    <string name="battery_light_title">Индикация батареи</string>
+    <string name="battery_light_summary">Настроить цвет индикатора на основе уровня заряда батареи и статуса</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Информация о батарее на экране блокировки</string>
+    <string name="lockscreen_battery_info_summary">Показывать ток зарядки, напряжение и температуру аккумулятора на экране блокировки во время зарядки</string>
+
+    <!-- About phone screen,  SELinux status -->
+    <string name="selinux_status">Статус SELinux</string>
+    <string name="selinux_status_disabled">Отключен</string>
+    <string name="selinux_status_permissive">Разрешающий</string>
+    <string name="selinux_status_enforcing">Запрещающий</string>
+
+    <!-- Status bar -->
+    <string name="status_bar_title">Строка состояния</string>
+    <!-- Status bar - Icon Manager -->
+    <string name="icon_manager_title">Менеджер иконок</string>
+    <string name="icon_manager_summary">Управление видимостью значков в строке состояния</string>
+
+    <!-- Quick Settings quick pulldown -->
+    <string name="quick_settings_quick_pull_down_title">Быстрое раскрытие меню быстрых настроек</string>
+    <string name="quick_settings_quick_pull_down_summary">Автоматически разворачивать быстрые настройки при нажатии с правой стороны строки состояния</string>
+
+    <!-- DT2S on statusbar-->
+    <string name="double_tap_sleep_gesture_title">Двойное нажатие для сна</string>
+    <string name="double_tap_sleep_gesture_summary">Дважды коснитесь строки состояния, чтобы перевести устройство в спящий режим</string>
+
+    <!-- Immersive Navigation -->
+    <string name="immersive_navigation_title">Инвертировать навигацию</string>
+
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">Разрешить доступ к сети</string>
+    <string name="data_usage_app_restrict_all_summary">Отслеживание использования сети</string>
+    <string name="data_usage_app_restrict_mobile">Сотовая сеть</string>
+    <string name="data_usage_app_restrict_mobile_summary">Разрешить использование сотовых данных</string>
+    <string name="data_usage_app_restrict_vpn">Данные VPN</string>
+    <string name="data_usage_app_restrict_vpn_summary">Разрешить использование данных VPN</string>
+    <string name="data_usage_app_restrict_wifi">Данные Wi\u2011Fi</string>
+    <string name="data_usage_app_restrict_wifi_summary">Разрешить использование данных Wi\u2011Fi</string>
+
+    <!-- Android debugging as root -->
+    <string name="adb_enable_root">Отладка с root-доступом</string>
+    <string name="adb_enable_summary_root">Разрешить запуск отладки Android с правами root</string>
+
+    <!-- Fingerprint location message - default -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Найдите датчик отпечатков пальцев на передней панели телефона.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="default">Найдите датчик отпечатков пальцев на левой стороне телефона.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="default">Найдите датчик отпечатков пальцев на правой стороне телефона.</string>
+
+    <!-- Fingerprint location message - generic -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="device">Найдите датчик отпечатков пальцев на передней панели устройства.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="device">Найдите датчик отпечатков пальцев на левой стороне устройства.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="device">Найдите датчик отпечатков пальцев на правой стороне устройства.</string>
+
+    <!-- Fingerprint location message - tablet -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="tablet">Найдите датчик отпечатков пальцев на передней панели планшета.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">Найдите датчик отпечатков пальцев на левой стороне планшета.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Найдите датчик отпечатков пальцев на правой стороне планшета.</string>
+
+    <!-- Refresh rate -->
+    <string name="refresh_rate_title">Частота обновления экрана</string>
+
+    <!-- Theme Settings -->
+    <string name="theme_settings_title">Дополнительные настройки</string>
+    <string name="theme_settings_summary">Акцентные цвета, формы значков и многое другое</string>
+    <string name="system_customization_category">ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ</string>
+    <string name="default_accent_color">Dodger Blue (по умолчанию)</string>
+    <string name="default_icon_shape">Круг (по умолчанию)</string>
+    <string name="default_font">OnePlus Slate (по умолчанию)</string>
+    <string name="default_icon_pack">AOSP + Oxygen (по умолчанию)</string>
+	
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Темы</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Цветовой акцент</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Шрифт заголовка / Основного текста</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Форма значков</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Пакет значков</string>
+</resources>
