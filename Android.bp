@@ -61,6 +61,7 @@ android_library {
         "android.hardware.dumpstate-V1.1-java",
         "me.waveproject.framework",
         "telephony-ext",
+        "faceunlock_framework",
     ],
 
     libs: [
