@@ -128,6 +128,13 @@
         settings:keywords="@string/keywords_ambient_display_screen"
         settings:controller="com.android.settings.security.screenlock.LockScreenPreferenceController" />
 
+    <!-- Statusbar Settings -->
+    <Preference
+        android:key="statusbar_settings"
+        android:title="@string/status_bar_title"
+        android:summary="@string/status_bar_summary"
+        android:fragment="com.android.settings.wave.fragments.Statusbar" />
+
     <SwitchPreference
         android:key="camera_gesture"
         android:title="@string/camera_gesture_title"
@@ -165,11 +172,5 @@
         android:key="vr_display_pref"
         android:title="@string/display_vr_pref_title"
         android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
-
-    <!-- Statusbar Settings -->
-    <Preference
-        android:key="statusbar_settings"
-        android:title="@string/status_bar_title"
-        android:fragment="com.android.settings.wave.fragments.Statusbar" />
 
 </PreferenceScreen>
