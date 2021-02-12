@@ -156,4 +156,17 @@
     <string name="theme_customization_icon_shape_title">Форма значков</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Пакет значков</string>
+	
+    <!-- Hotspot VPN -->
+    <string name="tethering_allow_vpn_upstreams_title">Разрешить клиентам использовать VPN</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Разрешить клиентам точки доступа при подключении использовать VPN-соединения этого устройства</string>
+
+    <!-- Battery style -->
+    <string name="battery_style_title">Стиль значка батареи</string>
+    <string name="battery_style_bar">Полоса</string>
+    <string name="battery_style_circle">Круг</string>
+    <string name="battery_style_hidden">Скрыт</string>
+
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">Связать громкость вызова и уведомлений</string>
 </resources>
