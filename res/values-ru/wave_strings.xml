@@ -90,8 +90,10 @@
 
     <!-- Status bar -->
     <string name="status_bar_title">Строка состояния</string>
+    <string name="status_bar_summary">Настройка значков, стиля батареи и многого другого</string>
+	
     <!-- Status bar - Icon Manager -->
-    <string name="icon_manager_title">Менеджер иконок</string>
+    <string name="icon_manager_title">Настройка иконок</string>
     <string name="icon_manager_summary">Управление видимостью значков в строке состояния</string>
 
     <!-- Quick Settings quick pulldown -->
@@ -156,4 +158,35 @@
     <string name="theme_customization_icon_shape_title">Форма значков</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Пакет значков</string>
+	
+    <!-- Hotspot VPN -->
+    <string name="tethering_allow_vpn_upstreams_title">Разрешить клиентам использовать VPN</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Разрешить клиентам точки доступа использовать VPN-подключения этого устройства для подключения</string>
+
+    <!-- Battery style -->
+    <string name="battery_style_title">Стиль значка батареи</string>
+    <string name="battery_style_bar">Полоска</string>
+    <string name="battery_style_circle">Круг</string>
+    <string name="battery_style_hidden">Скрыт</string>
+
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">Связать громкость звонков и уведомлений</string>
+	
+	<!-- Network traffic -->
+    <string name="traffic_title">Индикатор трафика</string>
+    <string name="traffic_summary">Включение или отключение индикаторов скорости сети</string>
+    <string name="network_traffic_title">Сетевой трафик</string>
+    <string name="network_traffic_state_title">Показывать скорость сети в строке состоянияS</string>
+    <string name="network_traffic_autohide_threshold_title">Порог автоматического скрытия скорости сети(КБ/с)</string>
+    <string name="network_traffic_notch_info">Устройства с вырезом в экране могут отображать индикатор только при расширении строки состояния, в зависимости от размера выемки и доступного места в строке состояния.</string>
+	
+	<!-- Lock screen cover art -->
+    <string name="lockscreen_media_art_title">Отображать обложку мультимедиа</string>	
+    <string name="lockscreen_media_art_summary">Показывать обложку мультимедиа экране блокировки</string>
+    <string name="lockscreen_media_blur_title">Уровень размытия обложки мультимедиа</string>
+    <string name="lockscreen_media_art_category_title">Обложка мультимедиа</string>
+	
+	<!-- Swipe up for face unlock -->
+    <string name="security_settings_face_require_swipe">Проведите вверх для разблокировки</string>
+    <string name="security_settings_face_require_swipe_summary">Проведите вверх по экрану блокировки, чтобы использовать разблокировку по лицу</string>
 </resources>
