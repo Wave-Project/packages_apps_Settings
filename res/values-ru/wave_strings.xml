@@ -176,7 +176,7 @@
     <string name="traffic_title">Индикатор трафика</string>
     <string name="traffic_summary">Включение или отключение индикаторов скорости сети</string>
     <string name="network_traffic_title">Сетевой трафик</string>
-    <string name="network_traffic_state_title">Показывать скорость сети в строке состоянияS</string>
+    <string name="network_traffic_state_title">Показывать скорость сети в строке состояния</string>
     <string name="network_traffic_autohide_threshold_title">Порог автоматического скрытия скорости сети(КБ/с)</string>
     <string name="network_traffic_notch_info">Устройства с вырезом в экране могут отображать индикатор только при расширении строки состояния, в зависимости от размера выемки и доступного места в строке состояния.</string>
 	
