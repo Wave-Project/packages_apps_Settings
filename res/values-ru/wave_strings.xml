@@ -173,7 +173,7 @@
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Связать громкость звонков и уведомлений</string>
 	
-	<!-- Network traffic -->
+    <!-- Network traffic -->
     <string name="traffic_title">Индикатор трафика</string>
     <string name="traffic_summary">Включение или отключение индикаторов скорости сети</string>
     <string name="network_traffic_title">Сетевой трафик</string>
@@ -181,13 +181,22 @@
     <string name="network_traffic_autohide_threshold_title">Порог автоматического скрытия скорости сети(КБ/с)</string>
     <string name="network_traffic_notch_info">Устройства с вырезом в экране могут отображать индикатор только при расширении строки состояния, в зависимости от размера выемки и доступного места в строке состояния.</string>
 	
-	<!-- Lock screen cover art -->
+    <!-- Lock screen cover art -->
     <string name="lockscreen_media_art_title">Отображать обложку мультимедиа</string>	
     <string name="lockscreen_media_art_summary">Показывать обложку мультимедиа экране блокировки</string>
     <string name="lockscreen_media_blur_title">Уровень размытия обложки мультимедиа</string>
     <string name="lockscreen_media_art_category_title">Обложка мультимедиа</string>
 	
-	<!-- Swipe up for face unlock -->
+    <!-- Swipe up for face unlock -->
     <string name="security_settings_face_require_swipe">Проведите вверх для разблокировки</string>
     <string name="security_settings_face_require_swipe_summary">Проведите вверх по экрану блокировки, чтобы использовать разблокировку по лицу</string>
+	
+     <!-- Display Settings -->
+    <string name="display_screen_label">Экран</string>
+    <string name="display_custom_label">Настройка</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Режим \"В кармане\"</string>
+    <string name="pocket_judge_summary">Блокировать экран и кнопки, когда устройство находится в кармане</string>
+
 </resources>
