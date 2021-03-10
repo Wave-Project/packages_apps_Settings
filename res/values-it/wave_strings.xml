@@ -179,7 +179,7 @@
     <string name="traffic_title">Indicatori di traffico</string>
     <string name="traffic_summary">Abilita o disabilita gli indicatori di velocità della rete</string>
     <string name="network_traffic_title">Traffico di rete</string>
-    <string name="network_traffic_state_title">Mostra la velocità della rette nella barra di stato</string>
+    <string name="network_traffic_state_title">Mostra la velocità della rete nella barra di stato</string>
     <string name="network_traffic_autohide_threshold_title">Soglia minima per visualizzare la velocità (KB/s)</string>
     <string name="network_traffic_notch_info">I dispositivi con notch (tacca) possono mostrare l\u2019indicatore solo quando la barra di stato è espansa, a seconda delle dimensioni del notch e dello spazio disponibile nella barra di stato</string>
 
