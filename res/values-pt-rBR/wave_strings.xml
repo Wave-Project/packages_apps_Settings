@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 Wave-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- WaveOS versioning -->
+    <string name="wave_version_title">Versão</string>
+    <string name="wave_device_title">Dispositivo</string>
+    <string name="wave_release_type_title">Tipo de lançamento</string>
+    <string name="wave_maintainer_title">Mantenedor</string>
+
+    <!-- Mobile network setting screen, summary of Mobile data switch preference when the network
+         is unavailable, the preference selection will be disabled. [CHAR LIMIT=NONE] -->
+    <string name="mobile_data_settings_summary_unavailable">Nenhum cartão SIM disponível</string>
+
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">Fones de ouvido salvos</string>
+
+    <!-- Battery Stats Menu -->
+    <string name="battery_menu_stats_total">Ver o uso detalhado</string>
+
+    <!-- Swipe to screenshot -->
+    <string name="swipe_to_screenshot_title">Deslize para a captura de tela</string>
+    <string name="swipe_to_screenshot_summary">Deslize 3 dedos para baixo na tela para fazer uma captura de tela</string>
+
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Percorrer os modos</string>
+    <string name="prevent_ringing_option_cycle_summary">Ligado (alternar entre os modos)</string>
+
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_screen_title">Reprodução adaptativa</string>
+    <string name="adaptive_playback_disabled_summary">Desligado</string>
+    <string name="adaptive_playback_timeout_title">Use um tempo limite de</string>
+    <string name="adaptive_playback_timeout_none">Sem tempo limite</string>
+    <string name="adaptive_playback_timeout_none_summary">Ligado (sem tempo limite)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 segundos</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Ligado (30 segundos)</string>
+    <string name="adaptive_playback_timeout_1_min">1 minuto</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Ligado (1 minuto)</string>
+    <string name="adaptive_playback_timeout_2_min">2 minutos</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Ligado (2 minutos)</string>
+    <string name="adaptive_playback_timeout_5_min">5 minutos</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Ligado (5 minutos)</string>
+    <string name="adaptive_playback_timeout_10_min">10 minutos</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Ligado (10 minutos)</string>
+    <string name="adaptive_playback_explainer">A reprodução adaptável pausa automaticamente a mídia quando o volume é silenciado e será retomada automaticamente quando o volume for restaurado dentro do tempo definido.</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Lanterna rápida</string>
+    <string name="power_button_torch_summary">Quando a tela está desligada, manter o botão liga e desliga pressionado ativará a lanterna</string>
+
+    <!-- Volume button music control -->
+    <string name="volume_button_music_control_title">Controle de reprodução</string>
+    <string name="volume_button_music_control_summary">Quando a tela está desligada, as teclas de volume pressionadas pularão as faixas de música</string>
+
+    <!-- Horizon Light -->
+    <string name="pulse_ambient_light_title">Notificações de borda</string>
+    <string name="pulse_ambient_light_summary">Ilumine as bordas laterais da tela no pulso de notificação</string>
+    <string name="ambient_notification_light_accent_title">Cor de destaque do sistema</string>
+    <string name="ambient_notification_light_color_automatic_title">Cor das notificações</string>
+    <string name="pulse_ambient_light_color">Ao pulsar, use</string>
+
+    <!-- Battery light -->
+    <string name="battery_light_title">Luz da bateria</string>
+    <string name="battery_light_summary">Acenda a luz da bateria durante o carregamento e pisque quando a bateria estiver fraca</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Informações de carregamento da tela de bloqueio</string>
+    <string name="lockscreen_battery_info_summary">Mostrar corrente de carga, tensão e temperatura da bateria na tela de bloqueio durante o carregamento</string>
+
+    <!-- About phone screen,  SELinux status -->
+    <string name="selinux_status">Status do SELinux</string>
+    <string name="selinux_status_disabled">Desabilitado</string>
+    <string name="selinux_status_permissive">Permissivo</string>
+    <string name="selinux_status_enforcing">Forçando</string>
+
+    <!-- Status bar -->
+    <string name="status_bar_title">Barra de status</string>
+    <string name="status_bar_summary">Gerenciador de ícones, estilos de bateria e muito mais</string>
+
+    <!-- Status bar - Icon Manager -->
+    <string name="icon_manager_title">Gerenciador de ícones</string>
+    <string name="icon_manager_summary">Controle a visibilidade dos ícones da barra de status</string>
+
+    <!-- Quick Settings quick pulldown -->
+    <string name="quick_settings_quick_pull_down_title">Puxar para baixo rápidamente</string>
+    <string name="quick_settings_quick_pull_down_summary">Expanda automaticamente as configurações rápidas ao puxar do lado direito da barra de status</string>
+
+    <!-- DT2S on statusbar-->
+    <string name="double_tap_sleep_gesture_title">Tocar para suspender</string>
+    <string name="double_tap_sleep_gesture_summary">Toque duas vezes na barra de status para suspender o dispositivo em qualquer tela</string>
+
+    <!-- Immersive Navigation -->
+    <string name="immersive_navigation_title">Navegação Imersiva</string>
+
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">Permitir acesso à rede</string>
+    <string name="data_usage_app_restrict_all_summary">Habilitar uso de rede</string>
+    <string name="data_usage_app_restrict_mobile">Dados móveis</string>
+    <string name="data_usage_app_restrict_mobile_summary">Permitir o uso de dados móveis</string>
+    <string name="data_usage_app_restrict_vpn">Dados VPN</string>
+    <string name="data_usage_app_restrict_vpn_summary">Permitir o uso de dados VPN</string>
+    <string name="data_usage_app_restrict_wifi">Dados Wi\u2011Fi</string>
+    <string name="data_usage_app_restrict_wifi_summary">Permitir o uso de dados Wi\u2011Fi</string>
+
+    <!-- Android debugging as root -->
+    <string name="adb_enable_root">Depuração enraizada</string>
+    <string name="adb_enable_summary_root">Permitir a depuração do Android como root</string>
+
+    <!-- Fingerprint location message - default -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Localize o sensor de impressão digital na frente do telefone.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="default">Localize o sensor de impressão digital no lado esquerdo do seu telefone.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="default">Localize o sensor de impressão digital no lado direito do telefone.</string>
+
+    <!-- Fingerprint location message - generic -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="device">Localize o sensor de impressão digital na frente do seu dispositivo.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="device">Localize o sensor de impressão digital no lado esquerdo do dispositivo.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="device">Localize o sensor de impressão digital no lado direito do dispositivo.</string>
+
+    <!-- Fingerprint location message - tablet -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="tablet">Localize o sensor de impressão digital na parte frontal do tablet.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">Localize o sensor de impressão digital no lado esquerdo do seu tablet.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Localize o sensor de impressão digital no lado direito do tablet.</string>
+
+    <!-- Refresh rate -->
+    <string name="refresh_rate_title">Taxa de atualização da tela</string>
+
+    <!-- Theme Settings -->
+    <string name="theme_settings_title">Customização</string>
+    <string name="theme_settings_summary">Cores de destaque, formas de ícones e muito mais</string>
+    <string name="system_customization_category">PERSONALIZAÇÃO DO SISTEMA</string>
+    <string name="default_accent_color">Dodger Blue (padrão)</string>
+    <string name="default_icon_shape">Circle (padrão)</string>
+    <string name="default_font">OnePlus Slate (padrão)</string>
+    <string name="default_icon_pack">AOSP + Oxygen (padrão)</string>
+
+    <!-- Hotspot VPN -->
+    <string name="tethering_allow_vpn_upstreams_title">Permitir que os clientes usem VPNs</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Permitir que clientes de ponto de acesso usem as conexões VPN deste dispositivo para conectividade upstream</string>
+
+    <!-- Battery style -->
+    <string name="battery_style_title">Estilo do ícone da bateria</string>
+    <string name="battery_style_bar">Barra</string>
+    <string name="battery_style_circle">Círculo</string>
+    <string name="battery_style_hidden">Ocultar</string>
+
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">Associar &amp; volumes de toque e notificações</string>
+
+    <!-- Network traffic -->
+    <string name="traffic_title">Indicadores de tráfego</string>
+    <string name="traffic_summary">Ativar ou desativar indicadores de tráfego de rede</string>
+    <string name="network_traffic_title">Tráfego de rede</string>
+    <string name="network_traffic_state_title">Mostra a velocidade do tráfego da rede na barra de status</string>
+    <string name="network_traffic_autohide_threshold_title">Limite de ocultação automática da velocidade da rede (KB/s)</string>
+    <string name="network_traffic_notch_info">Dispositivos com entalhe podem mostrar o indicador apenas quando a barra de status é expandida, dependendo do tamanho do entalhe e do espaço disponível na barra de status</string>
+
+    <!-- Lock screen cover art -->
+    <string name="lockscreen_media_art_title">Exibir arte de capa da mídia</string>	
+    <string name="lockscreen_media_art_summary">Mostra a arte do álbum da mídia em reprodução na tela de bloqueio</string>
+    <string name="lockscreen_media_blur_title">Nível de blur da arte de capa da mídia</string>
+    <string name="lockscreen_media_art_category_title">Arte da mídia</string>
+
+    <!-- Swipe up for face unlock -->
+    <string name="security_settings_face_require_swipe">Deslize para cima para desbloquear</string>
+    <string name="security_settings_face_require_swipe_summary">Deslize para cima na tela de bloqueio para usar o desbloqueio facial</string>
+
+    <!-- Display Settings -->
+    <string name="display_screen_label">Tela</string>
+    <string name="display_custom_label">Customização</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Detecção de bolso</string>
+    <string name="pocket_judge_summary">Bloquear entradas de tela e botão quando o dispositivo estiver no bolso</string>
+
+</resources>
