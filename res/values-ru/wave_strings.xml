@@ -140,15 +140,6 @@
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Частота обновления экрана</string>
 
-    <!-- Theme Settings -->
-    <string name="theme_settings_title">Дополнительные настройки</string>
-    <string name="theme_settings_summary">Акцентные цвета, формы значков и многое другое</string>
-    <string name="system_customization_category">ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ</string>
-    <string name="default_accent_color">Dodger Blue (по умолчанию)</string>
-    <string name="default_icon_shape">Круг (по умолчанию)</string>
-    <string name="default_font">OnePlus Slate (по умолчанию)</string>
-    <string name="default_icon_pack">AOSP + Oxygen (по умолчанию)</string>
-	
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Темы</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->

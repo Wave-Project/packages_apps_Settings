@@ -144,12 +144,7 @@
 
     <!-- Theme Settings -->
     <string name="theme_settings_title">Customization</string>
-    <string name="theme_settings_summary">Accent colors, icon shapes and more</string>
-    <string name="system_customization_category">SYSTEM CUSTOMIZATION</string>
-    <string name="default_accent_color">Dodger Blue (default)</string>
-    <string name="default_icon_shape">Circle (default)</string>
-    <string name="default_font">OnePlus Slate (default)</string>
-    <string name="default_icon_pack">AOSP + Oxygen (default)</string>
+    <string name="theme_settings_summary">Styles, wallpapers, clock, grid</string>
 
     <!-- Hotspot VPN -->
     <string name="tethering_allow_vpn_upstreams_title">Allow clients to use VPNs</string>

@@ -58,7 +58,6 @@
         android:summary="@string/theme_settings_summary"
         android:icon="@drawable/ic_homepage_theme_settings"
         android:order="-140"
-        android:fragment="com.android.settings.wave.fragments.ThemeSettings"
         settings:controller="com.android.settings.wave.controllers.TopLevelThemePreferenceController"/>
 
     <Preference

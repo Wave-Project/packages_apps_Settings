@@ -1,8 +1,12 @@
 package com.android.settings.wave.controllers;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.UserHandle;
+
+import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
@@ -53,6 +57,22 @@ public class TopLevelThemePreferenceController extends BasePreferenceController 
     @Override
     public boolean useDynamicSliceSummary() {
         return super.useDynamicSliceSummary();
+    }
+
+    public ComponentName getComponentName() {
+        return new ComponentName(mContext.getString(R.string.config_wallpaper_picker_package),
+                mContext.getString(R.string.config_styles_and_wallpaper_picker_class));
+    }
+
+    @Override
+    public boolean handlePreferenceTreeClick(Preference preference) {
+        if (getPreferenceKey().equals(preference.getKey())) {
+            final Intent intent = new Intent().setComponent(getComponentName());
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            preference.getContext().startActivity(intent);
+            return true;
+        }
+        return super.handlePreferenceTreeClick(preference);
     }
 
     public TopLevelThemePreferenceController(Context context, String str) {
