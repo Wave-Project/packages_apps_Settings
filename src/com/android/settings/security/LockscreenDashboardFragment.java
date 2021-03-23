@@ -109,6 +109,7 @@ public class LockscreenDashboardFragment extends DashboardFragment
         controllers.add(notificationController);
         mOwnerInfoPreferenceController = new OwnerInfoPreferenceController(context, this);
         controllers.add(mOwnerInfoPreferenceController);
+	controllers.add(new FPVibrationPreferenceController(context));
 
         return controllers;
     }
@@ -137,6 +138,7 @@ public class LockscreenDashboardFragment extends DashboardFragment
                     controllers.add(new LockScreenNotificationPreferenceController(context));
                     controllers.add(new OwnerInfoPreferenceController(
                             context, null /* fragment */));
+		    controllers.add(new FPVibrationPreferenceController(context));
                     return controllers;
                 }
 
