@@ -57,11 +57,11 @@ android_library {
         "android.hardware.dumpstate-V1.0-java",
         "android.hardware.dumpstate-V1.1-java",
         "me.waveproject.framework",
+        "telephony-ext",
     ],
 
     libs: [
         "telephony-common",
-        "telephony-ext",
         "ims-common",
         "app-compat-annotations",
     ],
