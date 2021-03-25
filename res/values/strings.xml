@@ -10171,7 +10171,7 @@
     <!-- Summary of display with screen sleep timeout [CHAR LIMIT=NONE] -->
     <string name="display_summary">Sleep after <xliff:g id="timeout_description" example="10 minutes">%1$s</xliff:g> of inactivity</string>
     <!-- Summary for Display settings, explaining a few important settings under it [CHAR LIMIT=NONE]-->
-    <string name="display_dashboard_summary">Statusbar, lockscreen, font size, screen timeout</string>
+    <string name="display_dashboard_summary">Status bar, font size, screen timeout</string>
 
     <!-- Summary for Display settings, explaining a few important settings under it [CHAR LIMIT=NONE]-->
     <string name="display_dashboard_summary_with_style">Styles, wallpapers, screen timeout, font size</string>
