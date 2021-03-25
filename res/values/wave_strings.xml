@@ -78,8 +78,10 @@
     <string name="pulse_ambient_light_color">When pulsing, use</string>
 
     <!-- Battery light -->
-    <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">Turn on the light while charging and blink when battery is low</string>
+    <string name="charging_battery_light_title">Charging battery light</string>
+    <string name="charging_battery_light_summary">Turn on light while charging battery</string>
+    <string name="low_battery_light_title">Low battery light</string>
+    <string name="low_battery_light_summary">Blink light when battery is low</string>
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>

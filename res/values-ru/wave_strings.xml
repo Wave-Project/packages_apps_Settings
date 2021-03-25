@@ -75,10 +75,6 @@
     <string name="ambient_notification_light_color_automatic_title">Цвет уведомления</string>
     <string name="pulse_ambient_light_color">Цвет подсветки</string>
 
-    <!-- Battery light -->
-    <string name="battery_light_title">Индикация батареи</string>
-    <string name="battery_light_summary">Настроить цвет индикатора на основе уровня заряда батареи и статуса</string>
-
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Информация о батарее на экране блокировки</string>
     <string name="lockscreen_battery_info_summary">Показывать ток зарядки, напряжение и температуру аккумулятора на экране блокировки во время зарядки</string>
