@@ -52,7 +52,7 @@ public class Statusbar extends SettingsPreferenceFragment
         mBatteryStylePref.setOnPreferenceChangeListener(this);
 
         mBatteryPercentagePref = (SwitchPreference) findPreference(KEY_BATTERY_PERCENTAGE);
-        boolean enabled = Settings.System.getInt(getActivity().getContentResolver(), SHOW_BATTERY_PERCENT, 0) == 1;
+        boolean enabled = Settings.System.getInt(getActivity().getContentResolver(), SHOW_BATTERY_PERCENT, 1) == 1;
         mBatteryPercentagePref.setChecked(enabled);
         mBatteryPercentagePref.setOnPreferenceChangeListener(this);
     }
