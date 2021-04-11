@@ -45,13 +45,6 @@
             settings:textEnd="@string/high_label"/>
     </PreferenceCategory>
 
-    <com.android.settingslib.widget.FooterPreference
-        android:key="gesture_navigation_settings_footer"
-        android:title="@string/back_sensitivity_dialog_message"
-        android:selectable="false"
-        settings:searchable="false"
-        settings:allowDividerAbove="true"/>
-
     <com.android.settings.widget.LabeledSeekBarPreference
         android:key="gesture_back_deadzone"
         android:title="@string/gesture_back_deadzone_label"
