@@ -21,4 +21,7 @@
     <color name="wave_homepage_icon_background">#ff202124</color>
     <color name="tl_preference_divider_bg">#ff202124</color>
 
+    <!-- Settings Battery Page Stupidity -->
+    <color name="contextual_card_solid_color">#1c1e20</color>
+
 </resources>

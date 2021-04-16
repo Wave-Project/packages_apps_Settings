@@ -15,59 +15,68 @@
   limitations under the License.
 -->
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/battery_entity_header"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingTop="30dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="20dp">
 
     <LinearLayout
-        android:id="@+id/battery_info_layout"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="18dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/battery_percent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:gravity="center_vertical"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="32sp"
-            android:fontFamily="sans-serif-medium"/>
-
-        <TextView
-            android:id="@+id/summary1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:gravity="center_vertical"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="13sp"
-            android:lineSpacingMultiplier="1.3"
-            android:fontFamily="sans-serif-book"/>
-
-        <Button
-            android:id="@+id/btn_show_stats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="-2dp"
-            android:text="@string/battery_menu_stats_total"
-            style="@style/ActionPrimaryButton" />
-
-    </LinearLayout>
-
-    <com.android.settings.fuelgauge.BatteryMeterView
-        android:id="@+id/battery_header_icon"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/battery_meter_height"
-        android:minWidth="@dimen/battery_meter_height"
-        android:layout_gravity="center"/>
+        android:layout_height="wrap_content"
+        android:background="@drawable/contextual_card_bg"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:id="@+id/battery_info_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="26dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/battery_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:breakStrategy="@null"
+                android:gravity="center_vertical"
+                android:lineSpacingMultiplier="0.8"
+                android:singleLine="true"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="96sp" />
+
+            <TextView
+                android:id="@+id/summary1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:breakStrategy="@null"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/btn_show_stats"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:clickable="true"
+                android:text="@string/battery_menu_stats_total"
+                android:textColor="?android:attr/colorAccent" />
+        </LinearLayout>
+
+        <com.android.settings.fuelgauge.BatteryMeterView
+            android:id="@+id/battery_header_icon"
+            android:layout_width="59dp"
+            android:layout_height="109dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="24dp"
+            android:scaleType="center" />
+    </LinearLayout>
 </LinearLayout>
