@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 Wave-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- WaveOS versioning -->
+    <string name="wave_version_title">Versione</string>
+    <string name="wave_device_title">Dispositivo</string>
+    <string name="wave_release_type_title">Tipo di rilascio</string>
+    <string name="wave_maintainer_title">Manutentore</string>
+
+    <!-- Mobile network setting screen, summary of Mobile data switch preference when the network
+         is unavailable, the preference selection will be disabled. [CHAR LIMIT=NONE] -->
+    <string name="mobile_data_settings_summary_unavailable">Nessuna scheda SIM disponibile</string>
+
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">Auricolari salvati</string>
+
+    <!-- Battery Stats Menu -->
+    <string name="battery_menu_stats_total">Dettagli uso batteria</string>
+
+    <!-- swipe to screenshot -->
+    <string name="swipe_to_screenshot_title">Swipe per screenshot</string>
+    <string name="swipe_to_screenshot_summary">Scorri tre dita dall\u2019alto verso il basso per fotografare lo schermo</string>
+
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Passa da una modalità all\u2019altra</string>
+    <string name="prevent_ringing_option_cycle_summary">Attivo (passa da una modalità all\u2019altra)</string>
+
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_screen_title">Riproduzione adattiva</string>
+    <string name="adaptive_playback_disabled_summary">Off</string>
+    <string name="adaptive_playback_timeout_title">Usa un timeout di</string>
+    <string name="adaptive_playback_timeout_none">Nessun timeout</string>
+    <string name="adaptive_playback_timeout_none_summary">On (nessun timeout)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 secondi</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">On (30 secondi)</string>
+    <string name="adaptive_playback_timeout_1_min">1 minuto</string>
+    <string name="adaptive_playback_timeout_1_min_summary">On (1 minuto)</string>
+    <string name="adaptive_playback_timeout_2_min">2 minuti</string>
+    <string name="adaptive_playback_timeout_2_min_summary">On (2 minuti)</string>
+    <string name="adaptive_playback_timeout_5_min">5 minuti</string>
+    <string name="adaptive_playback_timeout_5_min_summary">On (5 minuti)</string>
+    <string name="adaptive_playback_timeout_10_min">10 minuti</string>
+    <string name="adaptive_playback_timeout_10_min_summary">On (10 minuti)</string>
+    <string name="adaptive_playback_explainer">La riproduzione adattiva pausa automaticamente i contenuti multimediali quando il volume viene disattivato e riprenderà automaticamente quando il volume viene ripristinato entro il tempo impostato</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Torcia rapida</string>
+    <string name="power_button_torch_summary">Quando lo schermo è spento, la pressione prolungata del pulsante di accensione attiverà la torcia</string>
+
+    <!-- Volume button music control -->
+    <string name="volume_button_music_control_title">Controllo della riproduzione</string>
+    <string name="volume_button_music_control_summary">Quando lo schermo è spento, la pressione prolungata dei tasti del volume cambierà i brani musicali</string>
+
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Abilita riavvio avanzato</string>
+    <string name="global_actions_advanced_reboot_summary">Mostra le opzioni per il recovery e il bootloader</string>
+
+    <!-- Horizon Light -->
+    <string name="pulse_ambient_light_title">Illuminazione dei bordi</string>
+    <string name="pulse_ambient_light_summary">Illumina i bordi dello schermo alla ricezione delle notifiche</string>
+    <string name="ambient_notification_light_accent_title">Colore di accento del dispositivo</string>
+    <string name="ambient_notification_light_color_automatic_title">Colore di notifica</string>
+    <string name="pulse_ambient_light_color">Colore dell\u2019illuminazione</string>
+
+    <!-- Battery light -->
+    <string name="charging_battery_light_title">Indicatore caricamento batteria</string>
+    <string name="charging_battery_light_summary">Accendi il LED di notifica se messo in carica</string>
+    <string name="low_battery_light_title">Indicatore batteria scarica</string>
+    <string name="low_battery_light_summary">Lampeggia il LED di notifica se la batteria è scarica</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Informazioni sulla ricarica nella schermata di blocco</string>
+    <string name="lockscreen_battery_info_summary">Mostra la corrente di carica, la tensione e la temperatura della batteria sulla schermata di blocco durante la ricarica</string>
+
+    <!-- About phone screen,  SELinux status -->
+    <string name="selinux_status">Stato SELinux</string>
+    <string name="selinux_status_disabled">Disabilitato</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
+
+    <!-- Status bar -->
+    <string name="status_bar_title">Barra di stato</string>
+    <string name="status_bar_summary">Gestione icone, stili della batteria e altro</string>
+
+    <!-- Status bar - Icon Manager -->
+    <string name="icon_manager_title">Gestore di icone</string>
+    <string name="icon_manager_summary">Controlla la visibilità delle icone nella barra di stato</string>
+
+    <!-- Quick Settings quick pulldown -->
+    <string name="quick_settings_quick_pull_down_title">Accesso rapido al menu a tendina</string>
+    <string name="quick_settings_quick_pull_down_summary">Espandi automaticamente il menu a tendina allo swipe dall\u2019alto verso il basso dal lato destro della barra di stato</string>
+
+    <!-- DT2S on statusbar-->
+    <string name="double_tap_sleep_gesture_title">Doppio tocco per spegnere il display</string>
+    <string name="double_tap_sleep_gesture_summary">Doppio tocco sulla barra di stato per bloccare lo schermo (stand-by)</string>
+
+    <!-- Immersive Navigation -->
+    <string name="immersive_navigation_title">Modalità immersiva (a schermo intero)</string>
+
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">Consenti accesso alla rete</string>
+    <string name="data_usage_app_restrict_all_summary">Permette all\u2019applicazione l\u2019utilizzo della rete internet</string>
+    <string name="data_usage_app_restrict_mobile">Dati mobili</string>
+    <string name="data_usage_app_restrict_mobile_summary">Permette l\u2019utilizzo dei dati mobili</string>
+    <string name="data_usage_app_restrict_vpn">Dati VPN</string>
+    <string name="data_usage_app_restrict_vpn_summary">Permette l\u2019utilizzo dei dati VPN</string>
+    <string name="data_usage_app_restrict_wifi">Dati Wi\u2011Fi</string>
+    <string name="data_usage_app_restrict_wifi_summary">Permette l\u2019utilizzo dei dati Wi\u2011Fi</string>
+
+    <!-- Android debugging as root -->
+    <string name="adb_enable_root">Debugging con i permessi di Root</string>
+    <string name="adb_enable_summary_root">Permette di effettuare il debugging di Android con i permessi di root</string>
+
+    <!-- Fingerprint location message - default -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Individua il sensore di impronte digitali sulla parte anteriore del telefono.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="default">Individua il sensore di impronte digitali sul lato sinistro del telefono.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="default">Individua il sensore di impronte digitali sul lato destro del telefono.</string>
+
+    <!-- Fingerprint location message - generic -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="device">Individua il sensore di impronte digitali sulla parte anteriore del dispositivo.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="device">Individua il sensore di impronte digitali sul lato sinistro del dispositivo.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="device">Individua il sensore di impronte digitali sul lato destro del dispositivo.</string>
+
+    <!-- Fingerprint location message - tablet -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="tablet">Individua il sensore di impronte digitali sulla parte anteriore del tablet.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">Individua il sensore di impronte digitali sul lato sinistro del tablet.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Individua il sensore di impronte digitali sul lato destro del tablet.</string>
+
+    <!-- Refresh rate -->
+    <string name="min_refresh_rate_title">Frequenza minima di aggiornamento dello schermo</string>
+    <string name="max_refresh_rate_title">Frequenza massima di aggiornamento dello schermo</string>
+    <string name="battery_saver_refresh_rate_title">Riduci la frequenza di aggiornamento</string>
+    <string name="battery_saver_refresh_rate_summary">Usa una frequenza di aggiornamento dello schermo di 60 Hz per risparmiare energia quando la funzione Risparmio batteria è attiva</string>
+
+    <!-- Theme Settings -->
+    <string name="theme_settings_title">Customizzazione</string>
+    <string name="theme_settings_summary">Colori di accento, forme delle icone e altro</string>
+
+    <!-- Hotspot VPN -->
+    <string name="tethering_allow_vpn_upstreams_title">Consentire ai clienti di utilizzare le VPN</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Permettere ai clienti connessi tramite Hotspot di usufruire le VPN del dispositivo</string>
+
+    <!-- Battery style -->
+    <string name="battery_style_title">Tipo dell\u2019icona della batteria</string>
+    <string name="battery_style_bar">Rettangolo</string>
+    <string name="battery_style_circle">Cerchio</string>
+    <string name="battery_style_hidden">Nascosto</string>
+
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">Collega il volume di chiamata e di notifica</string>
+
+    <!-- Network traffic -->
+    <string name="traffic_title">Indicatori di traffico</string>
+    <string name="traffic_summary">Abilita o disabilita gli indicatori di velocità della rete</string>
+    <string name="network_traffic_title">Traffico di rete</string>
+    <string name="network_traffic_state_title">Mostra la velocità della rete nella barra di stato</string>
+    <string name="network_traffic_autohide_threshold_title">Soglia minima per visualizzare la velocità (KB/s)</string>
+    <string name="network_traffic_notch_info">I dispositivi con notch (tacca) possono mostrare l\u2019indicatore solo quando la barra di stato è espansa, a seconda delle dimensioni del notch e dello spazio disponibile nella barra di stato</string>
+
+    <!-- Lock screen cover art -->
+    <string name="lockscreen_media_art_title">Mostra la copertina degli album</string>
+    <string name="lockscreen_media_art_summary">Mostra le copertine degli album dei media in riproduzione sulla schermata di blocco</string>
+    <string name="lockscreen_media_blur_title">Livello di sfocatura della copertina</string>
+    <string name="lockscreen_media_art_category_title">Copertine album</string>
+
+    <!-- Swipe up for face unlock -->
+    <string name="security_settings_face_require_swipe">Scorri verso l\u2019alto per sbloccare</string>
+    <string name="security_settings_face_require_swipe_summary">Scorri verso l\u2019alto sulla schermata di blocco per utilizzare lo sblocco con il volto</string>
+
+    <!-- Display Settings -->
+    <string name="display_screen_label">Schermo</string>
+    <string name="display_custom_label">Customizzazione</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Modalità tasca</string>
+    <string name="pocket_judge_summary">Blocca lo schermo ed i pulsanti quando il dispositivo è in tasca</string>
+    
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Inverti il layout della barra di navigazione</string>
+    <string name="navbar_invert_info">Questo scambierà i pulsanti \"Indietro\" e \"App recenti\" sulla barra di navigazione</string>
+
+    <!-- Back Gestures -->
+    <string name="smallest_tick_label">Off</string>
+    <string name="greatest_tick_label">Metà schermo</string>
+    <string name="gesture_back_deadzone_label">Area morta</string>
+    <string name="back_sensitivity_dialog_message_cust">Usa la prima e la seconda seekbar per configurare la sensibilità dello swipe all'indietro, l'ultima seekbar per impostare un'area morta nella parte superiore dello schermo in cui lo swipe non deve essere attivato, per evitare conflitti con i gesti delle altre app</string>
+
+    <!-- App Lock -->
+    <string name="applock_title">Blocco applicazioni</string>
+    <string name="applock_locked">Bloccata</string>
+    <string name="applock_unlocked">Non bloccata</string>
+    <string name="applock_locked_apps">App bloccate</string>
+    <string name="applock_unlocked_apps">App non bloccate</string>
+    <string name="applock_lock_after_title">Blocca dopo</string>
+    <string name="applock_lock_after_instantly">Immediatamente</string>
+    <string name="applock_lock_after_15_seconds">15 secondi</string>
+    <string name="applock_lock_after_screen_off">Schermo spento</string>
+    <string name="applock_lock_after_summary">L'app verrà bloccata dopo il timeout selezionato</string>
+    <string name="applock_lock_after_instantly_summary">L'app sarà bloccata non appena verrà chiusa</string>
+    <string name="applock_lock_after_15_seconds_summary">L'app verrà bloccata 15 secondi dopo la chiusura</string>
+    <string name="applock_lock_after_screen_off_summary">L'app sarà bloccata non appena lo schermo verrà spento</string>
+    <string name="applock_notification_info">Puoi mostrare o nascondere il contenuto delle notifiche per app facendo clic sull'icona di notifica mostrata accanto a ciascuna app bloccata</string>
+    <string name="applock_show_notif">Il contenuto delle notifiche verrà mostrato</string>
+    <string name="applock_hide_notif">Il contenuto delle notifiche non verrà mostrato</string>
+    <string name="applock_setup">Proteggi l'accesso alle applicazioni</string>
+    <string name="applock_overlay_summary">Questa funzione non è disponibile perché questa app è bloccata</string>
+    <plurals name="applock_summary">
+        <item quantity="one">1 app bloccata</item>
+        <item quantity="other">%d app bloccate</item>
+    </plurals>
+    <string name="keywords_applock_settings">blocco app, blocco applicazioni, proteggi app, proteggi applicazioni</string>
+
+    <!-- Supress notifications if screen is on -->
+    <string name="notification_sound_vib_screen_on_title">Suono di notifica se attivo</string>
+    <string name="notification_sound_vib_screen_on_summary">Riproduci suoni e vibrazioni per le notifiche quando lo schermo è acceso</string>
+
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Opzioni di vibrazione per le chiamate</string>
+    <string name="incall_vibrate_connect_title">Vibra alla connessione</string>
+    <string name="incall_vibrate_call_wait_title">Vibra durante l'avviso di chiamata</string>
+    <string name="incall_vibrate_disconnect_title">Vibra alla disconnessione</string>
+
+    <!-- Power Button Fingerprint -->
+    <string name="fingerprint_power_button_press_title">Premi per sbloccare</string>
+    <string name="fingerprint_power_button_press_off_summary">Toccare il pulsante di accensione per sbloccare con l'impronta digitale quando lo schermo è spento</string>
+    <string name="fingerprint_power_button_press_on_summary">Premere il pulsante di accensione per sbloccare con l'impronta digitale quando lo schermo è spento</string>
+
+</resources>
