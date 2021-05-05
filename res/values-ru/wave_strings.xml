@@ -42,8 +42,10 @@
 
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_screen_title">Адаптивное воспроизведение</string>
+    <string name="adaptive_playback_disabled_summary">Выкл</string>
     <string name="adaptive_playback_timeout_title">Использовать тайм-аут</string>
-    <string name="adaptive_playback_timeout_none_summary">Выкл</string>
+    <string name="adaptive_playback_timeout_none">Без таймаута</string>
+    <string name="adaptive_playback_timeout_none_summary">Вкл (без таймаута)</string>
     <string name="adaptive_playback_timeout_30_secs">30 секунд</string>
     <string name="adaptive_playback_timeout_30_secs_summary">Вкл (на 30 сек)</string>
     <string name="adaptive_playback_timeout_1_min">1 минута</string>
@@ -74,6 +76,12 @@
     <string name="ambient_notification_light_accent_title">Цвет системного акцента</string>
     <string name="ambient_notification_light_color_automatic_title">Цвет уведомления</string>
     <string name="pulse_ambient_light_color">Цвет подсветки</string>
+	
+    <!-- Battery light -->
+    <string name="charging_battery_light_title">Индикатор при зарядке батареи</string>
+    <string name="charging_battery_light_summary">Активация индикатора во время зарядки батареи</string>
+    <string name="low_battery_light_title">Индикатор при низком заряде батареи</string>
+    <string name="low_battery_light_summary">Мигать при низком заряде батареи</string>
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Информация о батарее на экране блокировки</string>
@@ -135,6 +143,15 @@
 
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Частота обновления экрана</string>
+    <string name="min_refresh_rate_title">Минимальная частота обновления экрана</string>
+    <string name="max_refresh_rate_title">Максимальная частота обновления экрана</string>
+    <string name="battery_saver_refresh_rate_title">Уменьшение частоты обновления экрана</string>
+    <string name="battery_saver_refresh_rate_summary">Использовать частоту обновления экрана 60 Гц для экономии энергии, когда включена экономия заряда.</string>
+	
+       <!-- Theme Settings -->
+    <string name="theme_settings_title">Дополнительные настройки</string>
+    <string name="theme_settings_summary">Стили, обои, часы, сетка</string>
+
 
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Темы</string>
@@ -160,7 +177,7 @@
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Связать громкость звонков и уведомлений</string>
 	
-	<!-- Network traffic -->
+    <!-- Network traffic -->
     <string name="traffic_title">Индикатор трафика</string>
     <string name="traffic_summary">Включение или отключение индикаторов скорости сети</string>
     <string name="network_traffic_title">Сетевой трафик</string>
@@ -168,13 +185,72 @@
     <string name="network_traffic_autohide_threshold_title">Порог автоматического скрытия скорости сети(КБ/с)</string>
     <string name="network_traffic_notch_info">Устройства с вырезом в экране могут отображать индикатор только при расширении строки состояния, в зависимости от размера выемки и доступного места в строке состояния.</string>
 	
-	<!-- Lock screen cover art -->
+    <!-- Lock screen cover art -->
     <string name="lockscreen_media_art_title">Отображать обложку мультимедиа</string>	
     <string name="lockscreen_media_art_summary">Показывать обложку мультимедиа экране блокировки</string>
     <string name="lockscreen_media_blur_title">Уровень размытия обложки мультимедиа</string>
     <string name="lockscreen_media_art_category_title">Обложка мультимедиа</string>
 	
-	<!-- Swipe up for face unlock -->
+    <!-- Swipe up for face unlock -->
     <string name="security_settings_face_require_swipe">Проведите вверх для разблокировки</string>
     <string name="security_settings_face_require_swipe_summary">Проведите вверх по экрану блокировки, чтобы использовать разблокировку по лицу</string>
+	
+    <!-- Display Settings -->
+    <string name="display_screen_label">Экран</string>
+    <string name="display_custom_label">Дополнительные настройки экрана</string>
+	
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Режим \"В кармане\"</string>
+    <string name="pocket_judge_summary">Блокировать экран и кнопки, когда устройство находится в кармане</string>
+
+	 <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Поменять порядок кнопок</string>
+    <string name="navbar_invert_info">Поменять местами кнопки \"Назад\" и \"Недавние\" на навигационной панели</string>
+
+    <!-- Back Gestures -->
+    <string name="smallest_tick_label">Выкл</string>
+    <string name="greatest_tick_label">Половина экрана</string>
+    <string name="gesture_back_deadzone_label">Мертваая зона</string>
+    <string name="back_sensitivity_dialog_message_cust">Используйте первую и вторую панели настройки, чтобы настроить чувствительность жеста назад, последнюю панель настройки, чтобы установить мертвую зону в верхней части экрана, где жест не будет работать, чтобы избежать конфликтов с жестами в приложениях.</string>
+
+    <!-- App Lock -->
+    <string name="applock_title">Блокировка приложений</string>
+    <string name="applock_locked">Заблокировано</string>
+    <string name="applock_unlocked">Разблокировано</string>
+    <string name="applock_locked_apps">Заблокированные приложения</string>
+    <string name="applock_unlocked_apps">Разблокированные приложения</string>
+    <string name="applock_lock_after_title">Заблокировать приложение после</string>
+    <string name="applock_lock_after_instantly">Немедленно</string>
+    <string name="applock_lock_after_15_seconds">15 секунд</string>
+    <string name="applock_lock_after_screen_off">Выключения экрана</string>
+    <string name="applock_lock_after_summary">Приложение будет заблокировано после выбранного промежутка времени</string>
+    <string name="applock_lock_after_instantly_summary">Приложение будет заблокировано мгновенно при закрытии</string>
+    <string name="applock_lock_after_15_seconds_summary">Приложение будет заблокировано через 15 секунд после закрытия</string>
+    <string name="applock_lock_after_screen_off_summary">Приложение будет заблокировано после выключения экрана</string>
+    <string name="applock_notification_info">Вы можете показать/скрыть содержимое уведомления для каждого приложения, щелкнув значок уведомления, отображаемый в настройках каждого заблокированного приложения</string>
+    <string name="applock_show_notif">Показывать уведомления полностью</string>
+    <string name="applock_hide_notif">Скрыть содержимое уведомлений</string>
+    <string name="applock_setup">Настройка блокировки приложений</string>
+    <string name="applock_overlay_summary">Эта функция недоступна, так как приложение заблокировано</string>
+    <plurals name="applock_summary">
+        <item quantity="one">1 приложение заблокировано</item>
+        <item quantity="other">%d приложений(я) заблокировано(ы)</item>
+    </plurals>
+    <string name="keywords_applock_settings">блокировка, блокировщик приложений, блокировка приложения, блокировка приложений</string>
+
+    <!-- Supress notifications if screen is on -->
+    <string name="notification_sound_vib_screen_on_title">Звук уведомления при включённом экране</string>
+    <string name="notification_sound_vib_screen_on_summary">Воспроизводить звук и вибрацию при получении уведомлений когда экран включен</string>
+
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Настройки вибрации при вызове</string>
+    <string name="incall_vibrate_connect_title">Вибрация при соединении</string>
+    <string name="incall_vibrate_call_wait_title">Вибрировать при ожидании</string>
+    <string name="incall_vibrate_disconnect_title">Вибрация при отключении</string>
+
+    <!-- Power Button Fingerprint -->
+    <string name="fingerprint_power_button_press_title">Нажмите для разблокировки</string>
+    <string name="fingerprint_power_button_press_off_summary">Коснитесь кнопки питания, чтобы разблокировать с помощью отпечатка пальца, когда экран выключен</string>
+    <string name="fingerprint_power_button_press_on_summary">Нажмите кнопку питания, чтобы разблокировать с помощью отпечатка пальца, когда экран выключен</string>
+	
 </resources>
