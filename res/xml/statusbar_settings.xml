@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:key="status_bar_settings"
     android:title="@string/status_bar_title">
 
@@ -53,5 +54,32 @@
         android:title="@string/battery_percentage"
         android:summary="@string/battery_percentage_description"
         android:defaultValue="true" />
+
+    <PreferenceCategory
+        android:title="@string/traffic_title">
+
+        <me.waveproject.framework.preference.SystemSettingSwitchPreference
+            android:key="network_traffic_sb_state"
+            android:title="@string/network_traffic_sb_state_title"
+            android:defaultValue="false" />
+
+        <me.waveproject.framework.preference.SystemSettingSwitchPreference
+            android:key="network_traffic_esb_state"
+            android:title="@string/network_traffic_esb_state_title"
+            android:defaultValue="false" />
+
+        <me.waveproject.framework.preference.CustomSystemSeekBarPreference
+            android:key="network_traffic_autohide_threshold"
+            android:title="@string/network_traffic_autohide_threshold_title"
+            android:max="10"
+            settings:min="0"
+            settings:units="" />
+
+        <com.android.settingslib.widget.FooterPreference
+            android:key="footer_preference"
+            android:title="@string/network_traffic_notch_info"
+            android:selectable="false" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
