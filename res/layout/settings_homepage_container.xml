@@ -15,45 +15,50 @@
      limitations under the License.
 -->
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/settings_homepage_container"
-    android:background="@color/wave_homepage_background"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/wave_homepage_background"
+    android:fitsSystemWindows="true">
 
-    <androidx.core.widget.NestedScrollView
+    <com.android.settings.wave.edgeeffect.SpringNestScrollView
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:scrollbars="none"
         app:layout_behavior="com.android.settings.widget.FloatingAppBarScrollingViewBehavior">
 
         <LinearLayout
             android:id="@+id/homepage_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical"
+            android:splitMotionEvents="false"
+            android:windowEnableSplitTouch="false">
 
-            <include layout="@layout/wave_settings_header"/>
-            <include layout="@layout/wave_search_layout"/>
+            <include layout="@layout/wave_settings_header" />
+
+            <include layout="@layout/wave_search_layout" />
 
             <FrameLayout
                 android:id="@+id/contextual_cards_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/contextual_card_side_margin"
-                android:layout_marginEnd="@dimen/contextual_card_side_margin"/>
+                android:layout_marginEnd="@dimen/contextual_card_side_margin" />
 
             <FrameLayout
                 android:id="@+id/main_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:background="?android:attr/windowBackground"/>
+                android:background="?android:attr/windowBackground" />
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.android.settings.wave.edgeeffect.SpringNestScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
