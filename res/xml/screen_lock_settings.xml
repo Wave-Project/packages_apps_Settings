@@ -40,4 +40,11 @@
         android:key="power_button_instantly_locks"
         android:title="@string/lockpattern_settings_enable_power_button_instantly_locks" />
 
+    <me.waveproject.framework.preference.SystemSettingSwitchPreference
+        android:key="fod_icon_animation"
+        android:title="@string/fod_icon_animation"
+        android:summary="@string/fod_icon_animation_summary"
+        android:defaultValue="false"
+        settings:controller="com.android.settings.security.FodPreferenceController" />
+
 </PreferenceScreen>

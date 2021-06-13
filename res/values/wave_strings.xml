@@ -258,4 +258,7 @@
     <string name="legal_crap_settings">Legal information</string>
     <string name="legal_crap_summary">Privacy policy, agreements, etc</string>
 
+    <!-- FOD icon animation -->
+    <string name="fod_icon_animation_summary">Animate the FOD icon when turning on the screen</string>
+    <string name="fod_icon_animation">Animated FOD icon</string>
 </resources>
