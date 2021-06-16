@@ -20,10 +20,8 @@ import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.util.Log
-import android.view.MotionEvent
-import android.view.VelocityTracker
-import android.view.View
-import android.view.ViewConfiguration
+import android.view.*
+import android.widget.AbsListView.OnScrollListener.*
 import android.widget.EdgeEffect
 import androidx.core.widget.NestedScrollView
 import androidx.dynamicanimation.animation.FloatPropertyCompat
@@ -51,7 +49,7 @@ class SpringNestScrollView : NestedScrollView {
     private var maxFlingVelocity = 0
     private var pullCount = 0
     private var scrollPointerId = 0
-    private var scrollState = 0
+    private var scrollState = SCROLL_STATE_IDLE
     private var springAnimation: SpringAnimation? = null
     private var topGlow: EdgeEffect? = null
     private var bottomGlow: EdgeEffect? = null
@@ -62,14 +60,14 @@ class SpringNestScrollView : NestedScrollView {
         init()
     }
 
-    constructor(context: Context?, attributeSet: AttributeSet?) : super(
-        context!!, attributeSet
+    constructor(context: Context?, attrs: AttributeSet?) : super(
+        context!!, attrs
     ) {
         init()
     }
 
-    constructor(context: Context?, attributeSet: AttributeSet?, i: Int) : super(
-        context!!, attributeSet, i
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context!!, attrs, defStyleAttr
     ) {
         init()
     }
@@ -113,9 +111,9 @@ class SpringNestScrollView : NestedScrollView {
             MotionEvent.ACTION_DOWN -> {
                 scrollPointerId = event.getPointerId(0)
                 lastTouchY = (event.y + 0.5f).toInt()
-                if (scrollState == 2) {
+                if (scrollState == SCROLL_STATE_FLING) {
                     parent.requestDisallowInterceptTouchEvent(true)
-                    setScrollState(1)
+                    setScrollState(SCROLL_STATE_TOUCH_SCROLL)
                 }
                 nestedOffsets[1] = 0
                 nestedOffsets[0] = 0
@@ -125,7 +123,7 @@ class SpringNestScrollView : NestedScrollView {
                 velocityTracker!!.computeCurrentVelocity(1000, maxFlingVelocity.toFloat())
                 val yVelocity = -velocityTracker!!.getYVelocity(scrollPointerId)
                 if (yVelocity == 0.0f) {
-                    setScrollState(0)
+                    setScrollState(SCROLL_STATE_IDLE)
                 } else {
                     lastYVel = yVelocity
                     lastX = event.x
@@ -157,23 +155,22 @@ class SpringNestScrollView : NestedScrollView {
                     nestedOffsets[1] += scrollOffsets[1]
                 }
                 val hasConsumedLot: Boolean
-                if (scrollState != 1) {
+                if (scrollState != SCROLL_STATE_TOUCH_SCROLL) {
                     if (abs(consumed) > touchSlop) {
-                        consumed =
-                            if (consumed > 0) consumed - touchSlop else consumed + touchSlop
+                        consumed = if (consumed > 0) consumed - touchSlop else consumed + touchSlop
                         hasConsumedLot = true
                     } else {
                         hasConsumedLot = false
                     }
-                    if (hasConsumedLot) {
-                        setScrollState(1)
-                    }
+                    if (hasConsumedLot) setScrollState(SCROLL_STATE_TOUCH_SCROLL)
                 }
-                if (scrollState == 1) {
+                if (scrollState == SCROLL_STATE_TOUCH_SCROLL) {
                     lastTouchY = touchY - scrollOffsets[1]
-                    if (scrollByInternal(consumed, obtain)) {
-                        parent.requestDisallowInterceptTouchEvent(true)
-                    }
+                    if (scrollByInternal(
+                            consumed,
+                            obtain
+                        )
+                    ) parent.requestDisallowInterceptTouchEvent(true)
                 }
             }
             MotionEvent.ACTION_CANCEL -> cancelTouch()
@@ -209,7 +206,7 @@ class SpringNestScrollView : NestedScrollView {
                 velocityTracker!!.computeCurrentVelocity(1000, maxFlingVelocity.toFloat())
                 val yVelocity = -velocityTracker!!.getYVelocity(scrollPointerId)
                 if (yVelocity == 0.0f) {
-                    setScrollState(0)
+                    setScrollState(SCROLL_STATE_IDLE)
                 } else {
                     lastYVel = yVelocity
                     lastX = event.x
@@ -223,8 +220,8 @@ class SpringNestScrollView : NestedScrollView {
                 if (findPointerIndex < 0) {
                     Log.e(
                         "SpringScrollView",
-                        ("Error processing scroll; pointer index for id "
-                                + scrollPointerId + " not found. Did any MotionEvents get skipped?")
+                        "Error processing scroll; pointer index for id "
+                                + scrollPointerId + " not found. Did any MotionEvents get skipped?"
                     )
                     return false
                 }
@@ -241,23 +238,22 @@ class SpringNestScrollView : NestedScrollView {
                     nestedOffsets[1] += scrollOffsets[1]
                 }
                 val hasConsumedLot: Boolean
-                if (scrollState != 1) {
+                if (scrollState != SCROLL_STATE_TOUCH_SCROLL) {
                     if (abs(consumed) > touchSlop) {
-                        consumed =
-                            if (consumed > 0) consumed - touchSlop else consumed + touchSlop
+                        consumed = if (consumed > 0) consumed - touchSlop else consumed + touchSlop
                         hasConsumedLot = true
                     } else {
                         hasConsumedLot = false
                     }
-                    if (hasConsumedLot) {
-                        setScrollState(1)
-                    }
+                    if (hasConsumedLot) setScrollState(SCROLL_STATE_TOUCH_SCROLL)
                 }
-                if (scrollState == 1) {
+                if (scrollState == SCROLL_STATE_TOUCH_SCROLL) {
                     lastTouchY = touchY - scrollOffsets[1]
-                    if (scrollByInternal(consumed, obtain)) {
-                        parent.requestDisallowInterceptTouchEvent(true)
-                    }
+                    if (scrollByInternal(
+                            consumed,
+                            obtain
+                        )
+                    ) parent.requestDisallowInterceptTouchEvent(true)
                 }
             }
             MotionEvent.ACTION_CANCEL -> cancelTouch()
@@ -267,58 +263,48 @@ class SpringNestScrollView : NestedScrollView {
             }
             MotionEvent.ACTION_POINTER_UP -> onPointerUp(event)
         }
-        if (!isActionUp) {
-            velocityTracker!!.addMovement(obtain)
-        }
+        if (!isActionUp) velocityTracker!!.addMovement(obtain)
         obtain.recycle()
         return super.onTouchEvent(event)
     }
 
     private fun ensureTopGlow() {
-        if (edgeEffectFactory == null) {
-            throw IllegalStateException("setEdgeEffectFactory first, please!")
-        } else if (topGlow == null) {
-            topGlow = edgeEffectFactory!!.createEdgeEffect(this, 1)
-            if (clipToPadding) {
-                topGlow!!.setSize(
-                    (measuredWidth - paddingLeft) - paddingRight,
-                    (measuredHeight - paddingTop) - paddingBottom
-                )
-            } else {
-                topGlow!!.setSize(measuredWidth, measuredHeight)
-            }
-        }
+        checkNotNull(edgeEffectFactory) { "setEdgeEffectFactory first, please!" }
+        if (topGlow != null) return
+        topGlow = edgeEffectFactory!!.createEdgeEffect(this, 1)
+        if (clipToPadding) {
+            topGlow!!.setSize(
+                (measuredWidth - paddingLeft) - paddingRight,
+                (measuredHeight - paddingTop) - paddingBottom
+            )
+        } else topGlow!!.setSize(measuredWidth, measuredHeight)
     }
 
     private fun ensureBottomGlow() {
-        if (edgeEffectFactory == null) {
-            throw IllegalStateException("setEdgeEffectFactory first, please!")
-        } else if (bottomGlow == null) {
-            bottomGlow = edgeEffectFactory!!.createEdgeEffect(this, 3)
-            if (clipToPadding) {
-                bottomGlow!!.setSize(
-                    (measuredWidth - paddingLeft) - paddingRight,
-                    (measuredHeight - paddingTop) - paddingBottom
-                )
-            } else {
-                bottomGlow!!.setSize(measuredWidth, measuredHeight)
-            }
-        }
+        checkNotNull(edgeEffectFactory) { "setEdgeEffectFactory first, please!" }
+        if (bottomGlow != null) return
+        bottomGlow = edgeEffectFactory!!.createEdgeEffect(this, 3)
+        if (clipToPadding) {
+            bottomGlow!!.setSize(
+                (measuredWidth - paddingLeft) - paddingRight,
+                (measuredHeight - paddingTop) - paddingBottom
+            )
+        } else bottomGlow!!.setSize(measuredWidth, measuredHeight)
     }
 
     private fun pullGlows(x: Float, xUnconsumed: Float, y: Float, yUnconsumed: Float) {
-        if (y <= (height.toFloat()) && y >= 0.0f) {
+        if (y <= height.toFloat() && y >= 0.0f) {
             val height = y / (height.toFloat())
-            var z = true
-            if ((yUnconsumed < 0.0f) && (height < pullGrowBottom) && (height > pullGrowTop)) {
+            var consumedLess = true
+            if (yUnconsumed < 0.0f && height < pullGrowBottom && height > pullGrowTop) {
                 ensureTopGlow()
                 topGlow!!.onPull(
                     (-yUnconsumed) / getHeight().toFloat(),
                     x / width.toFloat()
                 )
                 glowingTop = true
-            } else if ((yUnconsumed <= 0.0f) || (height <= pullGrowTop) || (height >= pullGrowBottom)) {
-                z = false
+            } else if (yUnconsumed <= 0.0f || height <= pullGrowTop || height >= pullGrowBottom) {
+                consumedLess = false
             } else {
                 ensureBottomGlow()
                 bottomGlow!!.onPull(
@@ -327,14 +313,12 @@ class SpringNestScrollView : NestedScrollView {
                 )
                 glowingBottom = true
             }
-            if (z || (xUnconsumed != 0.0f) || (yUnconsumed != 0.0f)) {
-                postInvalidateOnAnimation()
-            }
+            if (consumedLess || xUnconsumed != 0.0f || yUnconsumed != 0.0f) postInvalidateOnAnimation()
         }
     }
 
     private fun setScrollState(state: Int) {
-        if (state != scrollState) {
+        if (scrollState != state) {
             scrollState = state
         }
     }
@@ -352,22 +336,18 @@ class SpringNestScrollView : NestedScrollView {
             topGlow!!.onRelease()
             glowingTop = false
             isFinished = topGlow!!.isFinished
-        } else {
-            isFinished = false
-        }
+        } else isFinished = false
         if (bottomGlow != null) {
             bottomGlow!!.onRelease()
             glowingBottom = false
             isFinished = isFinished or bottomGlow!!.isFinished
         }
-        if (isFinished) {
-            postInvalidateOnAnimation()
-        }
+        if (isFinished) postInvalidateOnAnimation()
     }
 
     private fun cancelTouch() {
         resetTouch()
-        setScrollState(0)
+        setScrollState(SCROLL_STATE_IDLE)
     }
 
     private fun onPointerUp(motionEvent: MotionEvent) {
@@ -384,25 +364,12 @@ class SpringNestScrollView : NestedScrollView {
     }
 
     private fun scrollByInternal(yConsumed: Int, event: MotionEvent?): Boolean {
-        val dxConsumed: Int
-        val dyConsumed: Int
-        val dxUnconsumed: Int
-        val dyUnconsumed: Int
-        if (!isReadyToOverScroll(yConsumed < 0)) {
-            return false
-        }
-        if (childCount >= 0) {
-            scrollStep(scrollStepConsumed)
-            dxConsumed = scrollStepConsumed[0]
-            dyConsumed = scrollStepConsumed[1]
-            dxUnconsumed = -dxConsumed
-            dyUnconsumed = yConsumed - dyConsumed
-        } else {
-            dyConsumed = 0
-            dxConsumed = 0
-            dxUnconsumed = 0
-            dyUnconsumed = 0
-        }
+        if (!isReadyToOverScroll(yConsumed < 0)) return false
+        if (childCount >= 0) scrollStep(scrollStepConsumed)
+        val dxConsumed: Int = if (childCount >= 0) scrollStepConsumed[0] else 0
+        val dyConsumed: Int = if (childCount >= 0) scrollStepConsumed[1] else 0
+        val dxUnconsumed: Int = if (childCount >= 0) -dxConsumed else 0
+        val dyUnconsumed: Int = if (childCount >= 0) yConsumed - dyConsumed else 0
         invalidate()
         val nestedScroll = dispatchNestedScroll(
             dxConsumed,
@@ -417,8 +384,8 @@ class SpringNestScrollView : NestedScrollView {
             nestedOffsets[0] += scrollOffsets[0]
             nestedOffsets[1] += scrollOffsets[1]
         }
-        if ((!nestedScroll || overScrollNested) && overScrollMode != 2) {
-            if (event != null && !event.isFromSource(8194)) {
+        if ((!nestedScroll || overScrollNested) && overScrollMode != OVER_SCROLL_NEVER) {
+            if (event != null && !event.isFromSource(InputDevice.SOURCE_MOUSE)) {
                 pullGlows(
                     event.x, dxUnconsumed.toFloat(), event.y,
                     dyUnconsumed.toFloat()
@@ -426,12 +393,8 @@ class SpringNestScrollView : NestedScrollView {
             }
             considerReleasingGlowsOnScroll(yConsumed)
         }
-        if (!(dxConsumed == 0 && dyConsumed == 0)) {
-            dispatchOnScrolled()
-        }
-        if (!awakenScrollBars()) {
-            invalidate()
-        }
+        if (dxConsumed != 0 || dyConsumed != 0) dispatchOnScrolled()
+        if (!awakenScrollBars()) invalidate()
         return dxConsumed != 0 || dyConsumed != 0
     }
 
@@ -442,38 +405,29 @@ class SpringNestScrollView : NestedScrollView {
     }
 
     private fun isReadyToOverScroll(hasConsumedLess: Boolean): Boolean {
-        if (childCount <= 0) {
-            return false
-        }
-        return if (hasConsumedLess) {
-            !canScrollVertically(-1)
-        } else !canScrollVertically(1)
+        return if (childCount <= 0) false else !canScrollVertically(
+            if (hasConsumedLess) -1 else 1
+        )
     }
 
     private fun considerReleasingGlowsOnScroll(yConsumed: Int) {
         var isFinished = false
-        if ((topGlow != null) && !topGlow!!.isFinished && (yConsumed > 0)) {
+        if (topGlow != null && !topGlow!!.isFinished && yConsumed > 0) {
             topGlow!!.onRelease()
             isFinished = topGlow!!.isFinished
         }
-        if ((bottomGlow != null) && !bottomGlow!!.isFinished && (yConsumed < 0)) {
+        if (bottomGlow != null && !bottomGlow!!.isFinished && yConsumed < 0) {
             bottomGlow!!.onRelease()
             isFinished = isFinished or bottomGlow!!.isFinished
         }
-        if (isFinished) {
-            postInvalidateOnAnimation()
-        }
+        if (isFinished) postInvalidateOnAnimation()
     }
 
     override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
         super.onScrollChanged(l, t, oldl, oldt)
-        if (glowingTop && canScrollVertically(-1) && (t > oldt)) {
-            onRecyclerViewScrolled()
-        }
-        if (glowingBottom && canScrollVertically(1) && (t < oldt)) {
-            onRecyclerViewScrolled()
-        }
-        if (!glowingTop && !canScrollVertically(-1) && (t < oldt)) {
+        if (glowingTop && canScrollVertically(-1) && t > oldt) onRecyclerViewScrolled()
+        if (glowingBottom && canScrollVertically(1) && t < oldt) onRecyclerViewScrolled()
+        if (!glowingTop && !canScrollVertically(-1) && t < oldt) {
             pullGlows(lastX, 0.0f, lastY, lastYVel / 20.0f)
             if (topGlow != null) {
                 topGlow!!.onAbsorb((lastYVel / 20.0f).toInt())
@@ -481,9 +435,8 @@ class SpringNestScrollView : NestedScrollView {
         }
         if (!glowingBottom && !canScrollVertically(1) && (t > oldt)) {
             pullGlows(lastX, 0.0f, lastY, lastYVel / 20.0f)
-            if (bottomGlow != null) {
-                bottomGlow!!.onAbsorb((lastYVel / 20.0f).toInt())
-            }
+            if (bottomGlow == null) return
+            bottomGlow!!.onAbsorb((lastYVel / 20.0f).toInt())
         }
     }
 
@@ -492,7 +445,7 @@ class SpringNestScrollView : NestedScrollView {
     }
 
     private fun setDampedScrollShift(shift: Float) {
-        if (shift != dampedScrollShift) {
+        if (dampedScrollShift != shift) {
             dampedScrollShift = shift
             invalidate()
         }
@@ -505,21 +458,20 @@ class SpringNestScrollView : NestedScrollView {
     }
 
     private fun onRecyclerViewScrolled() {
-        if (pullCount != 1) {
-            distance = 0.0f
-            pullCount = 0
-            finishScrollWithVelocity(0.0f)
-        }
+        if (pullCount == 1) return
+        distance = 0.0f
+        pullCount = 0
+        finishScrollWithVelocity(0.0f)
     }
 
     override fun draw(canvas: Canvas) {
-        if (dampedScrollShift != 0.0f) {
-            canvas.translate(0.0f, dampedScrollShift)
+        if (dampedScrollShift == 0.0f) {
             super.draw(canvas)
-            canvas.restoreToCount(canvas.save())
             return
         }
+        canvas.translate(0.0f, dampedScrollShift)
         super.draw(canvas)
+        canvas.restoreToCount(canvas.save())
     }
 
     open class SEdgeEffectFactory {
@@ -537,17 +489,15 @@ class SpringNestScrollView : NestedScrollView {
 
     inner class ViewEdgeEffectFactory : SEdgeEffectFactory() {
         override fun createEdgeEffect(view: View, direction: Int): EdgeEffect {
-            return when {
-                direction == DIRECTION_LEFT
-                        || direction == DIRECTION_TOP -> {
+            return when (direction) {
+                DIRECTION_LEFT, DIRECTION_TOP -> {
                     SpringEdgeEffect(context, 0.3f)
                 }
-                direction != DIRECTION_RIGHT
-                        && direction != DIRECTION_BOTTOM -> {
-                    super.createEdgeEffect(view, direction)
+                DIRECTION_RIGHT, DIRECTION_BOTTOM -> {
+                    SpringEdgeEffect(context, -0.3f)
                 }
                 else -> {
-                    SpringEdgeEffect(context, -0.3f)
+                    super.createEdgeEffect(view, direction)
                 }
             }
         }
