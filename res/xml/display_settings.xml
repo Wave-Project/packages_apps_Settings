@@ -94,16 +94,11 @@
             android:summary="@string/summary_placeholder"
             settings:controller="com.android.settings.display.PeakRefreshRatePreferenceController" />
 
-        <!--ListPreference
-            android:icon="@drawable/ic_settings_notch_display"
-            android:key="display_cutout_emulation"
-            android:title="@string/display_cutout_emulation"
-            settings:keywords="@string/display_cutout_emulation_keywords" /-->
-
         <Preference
             android:key="cutout_settings"
             android:fragment="com.android.settings.display.CutoutFragment"
             android:icon="@drawable/ic_settings_notch_display"
+            settings:controller="com.android.settings.display.CutoutPreferenceController"
             android:title="@string/cutout_main" />
 
         <SwitchPreference
